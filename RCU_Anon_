@@ -268,24 +268,6 @@
   <law-ru>
    NULL
   </law-ru>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
  </Learner>
  <!-- 18 yr old learner undertaking a part-time 16-19  (excluding apprenticeships) funded programme -->
  <Learner>
@@ -462,24 +444,6 @@
     </LearnDelFAMCode>
    </LearningDeliveryFAM>
   </LearningDelivery>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
   <db-ru>
    NULL
   </db-ru>
@@ -958,24 +922,6 @@
   <law-ru>
    NULL
   </law-ru>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
  </Learner>
  <!-- Adult skills funded learner -->
  <Learner>
@@ -1145,24 +1091,6 @@
     </ProvSpecDelMon>
    </ProviderSpecDeliveryMonitoring>
   </LearningDelivery>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
   <db-ru>
    NULL
   </db-ru>
@@ -1632,24 +1560,6 @@
   <law-ru>
    NULL
   </law-ru>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
  </Learner>
  <!-- Learner - ADULT SKILLS learning -->
  <Learner>
@@ -1832,24 +1742,6 @@
     </ProvSpecDelMon>
    </ProviderSpecDeliveryMonitoring>
   </LearningDelivery>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
   <db-ru>
    NULL
   </db-ru>
@@ -2130,24 +2022,6 @@
   <law-ru>
    NULL
   </law-ru>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
  </Learner>
  <!--  ESF Funded learner -->
  <Learner>
@@ -2339,24 +2213,6 @@
   <law-ru>
    NULL
   </law-ru>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
  </Learner>
  <!-- Community Learning Funded learner -->
  <Learner>
@@ -2463,24 +2319,6 @@
     </LearnDelFAMCode>
    </LearningDeliveryFAM>
   </LearningDelivery>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
   <db-ru>
    NULL
   </db-ru>
@@ -2648,24 +2486,6 @@
     </ProvSpecDelMon>
    </ProviderSpecDeliveryMonitoring>
   </LearningDelivery>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
   <db-ru>
    NULL
   </db-ru>
@@ -2872,24 +2692,6 @@
   <law-ru>
    NULL
   </law-ru>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
  </Learner>
  <!-- Non-funded learner -->
  <Learner>
@@ -3014,24 +2816,6 @@
     </ProvSpecDelMon>
    </ProviderSpecDeliveryMonitoring>
   </LearningDelivery>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
   <db-ru>
    NULL
   </db-ru>
@@ -3260,24 +3044,6 @@
   <law-ru>
    NULL
   </law-ru>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
  </Learner>
  <!-- Loans learner  -->
  <Learner>
@@ -3424,24 +3190,6 @@
     </ProvSpecDelMon>
    </ProviderSpecDeliveryMonitoring>
   </LearningDelivery>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
   <db-ru>
    NULL
   </db-ru>
@@ -3771,24 +3519,6 @@
   <law-ru>
    NULL
   </law-ru>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
  </Learner>
  <!-- Learner - sample Higher apprenticeship prior to 1 May 2017 -->
  <Learner>
@@ -4087,24 +3817,6 @@
     </LearnDelFAMCode>
    </LearningDeliveryFAM>
   </LearningDelivery>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
   <db-ru>
    NULL
   </db-ru>
@@ -4476,24 +4188,6 @@
     </LearnDelFAMDateTo>
    </LearningDeliveryFAM>
   </LearningDelivery>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
   <db-ru>
    NULL
   </db-ru>
@@ -4899,24 +4593,6 @@
     </LearnDelFAMCode>
    </LearningDeliveryFAM>
   </LearningDelivery>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
-  <db-ru>
-   NULL
-  </db-ru>
-  <lad-ru>
-   NULL
-  </lad-ru>
-  <law-ru>
-   NULL
-  </law-ru>
   <db-ru>
    NULL
   </db-ru>
