@@ -4,6 +4,7 @@ from tkinter.filedialog import askopenfilename
 from bs4 import BeautifulSoup
 from tkinter.filedialog import askdirectory
 import tkinter.messagebox
+import os
 
 #Create window interface / Labels 
 root = Tk()
@@ -101,7 +102,8 @@ def OpenFile(): #todo add vaildation
 
         # Output And Save Modified File
 
-        with open(outputlocation + "\RCU_Anon.xml", "w") as outfile:
+        nameFile = os.path.basename(name)
+        with open(outputlocation +  nameFile + ".anon", "w") as outfile:
             outfile.write(soup.prettify())
 
         tkinter.messagebox.showinfo("Finished Anonymisation!", "Thank you. The file will be located\nin your selected output location") #Make this appear in a widget.

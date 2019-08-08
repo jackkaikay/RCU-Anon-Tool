@@ -4,8 +4,6 @@
     <list default="true" id="440dcb2b-9aa5-4a9c-9a0c-f005e84638b7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Rcu tool using V4 -With GUI .py" beforeDir="false" afterPath="$PROJECT_DIR$/Rcu tool using V4 -With GUI .py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEND_ME_TO_RCU.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/SEND_ME_TO_RCU2.xml" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -85,7 +83,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Rcu tool using V4 -With GUI .py</url>
-          <line>16</line>
+          <line>17</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
