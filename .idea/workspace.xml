@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="440dcb2b-9aa5-4a9c-9a0c-f005e84638b7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/NEW_FILE_FOR_RCU.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RCU_Anon_" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/RCU_Anon_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Rcu tool TESTING BOOK.py" beforeDir="false" afterPath="$PROJECT_DIR$/Rcu tool TESTING BOOK.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Rcu tool using V4 -With GUI .py" beforeDir="false" afterPath="$PROJECT_DIR$/Rcu tool using V4 -With GUI .py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/xml and csv testing.py" beforeDir="false" afterPath="$PROJECT_DIR$/xml and csv testing.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -100,8 +99,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.xml and csv testing" />
         <item itemvalue="Python.Rcu tool TESTING BOOK" />
+        <item itemvalue="Python.xml and csv testing" />
       </list>
     </recent_temporary>
   </component>

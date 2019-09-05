@@ -6,8 +6,6 @@ from tkinter.filedialog import askdirectory
 import tkinter.messagebox
 import os
 
-
-
 #Create window interface / Labels 
 root = Tk()
 root.iconbitmap(r'C:\Users\jkay\AppData\Local\Programs\Python\Python37-32\DLLs\RCU2.ico')
@@ -15,8 +13,6 @@ root.title("RCU Anonymiser Tool")
 from PIL import Image, ImageTk
 
 #Triggering the anonamising
-
-
 def OpenFile(): #todo add vaildation
     name = askopenfilename(filetypes=(("XML File", "*.XML"), ("All Files", "*.*")),
                            title="Choose the ILR file.")
@@ -51,7 +47,7 @@ def OpenFile(): #todo add vaildation
         #Date Of Birth# 
         for dob_tag in soup.find_all("DateOfBirth"):
             dob_count = len(soup.find_all("DateOfBirth"))
-            dob_tag.string = ""
+            dob_tag.string = "2099-01-01"
 
 
         #Full Name#
@@ -89,7 +85,7 @@ def OpenFile(): #todo add vaildation
         #Unique Learner Numeber#
         for ULN_tag in soup.find_all("ULN"):
             ULN_count = len(soup.find_all("ULN"))
-            ULN_tag.string = ""
+            ULN_tag.string = "99999999"
     
         #National Insurance Number#
         for NiNumber_tag in soup.find_all("NINumber"):
@@ -135,7 +131,7 @@ def OpenFile(): #todo add vaildation
         print(str(name))
 
         with open(outputlocation + "\RCU_" + nameFile , "w") as outfile:
-            outfile.write(soup.prettify())
+            outfile.write(str(soup))
 
         tkinter.messagebox.showinfo('Field Check',
         'Number of fields anonymised\n'
@@ -152,18 +148,35 @@ def OpenFile(): #todo add vaildation
         'Family Names : ' + str(familyname_count) +'\n'
         'Surnames : ' + str(surname_count) +'\n'
         'dates of births : ' + str(dob_count) +'\n')
-        tkinter.messagebox.showinfo("Finished Anonymisation!", "Finished Anonymisation! Thank you. \nFile explorer will automatically open in your selected output location. This file will need to be uploaded manually")
+        tkinter.messagebox.showinfo("Finished Anonymisation!", "Finished Anonymisation! Thank you. \nFile explorer will automatically open in your selected output location.")
         os.startfile(outputlocation)
 
     except:
          tkinter.messagebox.showinfo("Failed Anonymisation!", "Anonymisation Failed! Please retry or contact RCU \n  Tel: 01772 734855  |  Email: Mides@rcu.co.uk")
 
+def informationbox():
+    popup = Tk()
+
+    def leavemini():
+        popup.destroy()
+
+    popup.geometry ("310x525")
+    popup.title("Additional Information")
+    popupbutton1 = tkinter.Button(popup, padx=5, pady=5, text="Okay", fg="Black", bg="Yellow", command = leavemini)
+    popup.iconbitmap(r'C:\Users\jkay\AppData\Local\Programs\Python\Python37-32\DLLs\RCU2.ico')
+    popuplabel1 = Label(popup, anchor='w', text=' Removes personally identifiable fields from the ILR files. \n \n \n Version 1.0 \n Copyright © RCU Ltd. \n \n Deletes following information where it exists \n \n  Postcodes\n Prior Postcodes \n  national insurance numbers \nULNs\nEmails\nTelephone Numbers\nAddress Line 1\nAddress Line 2\nAddress Line 3\nAddress Line 4\nFamily Names\nSurnames\n dates of birth\n \n \n How to use \n All anonymisation is done from the "Select ILR" button\n add \n much \n more \n text  \n For any further required assisatnace \n \n Tel: 01772 734855  |  Email: Mides@rcu.co.uk" \n')
+    popuplabel1.pack(fill='both')
+    popupbutton1.pack()
+    popup.mainloop()
+
 #Programme View
-root.geometry ("500x350")
-OverviewLabel3 = Label(root, text="Tel: 01772 734855  |  Email: Mides@rcu.co.uk", bd=1, relief=SUNKEN,)
-OverviewLabel = Label(root, text='\n You will be asked for your ILR first then asked to give a output location for the produced ILR \n')
-OverviewLabel2 = Label(root, text=" \nPlease insert the ILR file below (XML Format) to start the process.")
-img = Image.open("RCULOGO.png")
+root.geometry ("500x325")
+OverviewLabel3 = Label(root, text='Anonymiser Tool', font='Helvetica 14 bold')
+OverviewLabel4 = Label(root, text="Tel: 01772 734855  |  Email: Mides@rcu.co.uk", bd=1, )
+OverviewLabel = Label(root, text='\n You will be asked for your ILR first then asked to give a output location for the produced ILR \n Please insert the ILR file below (XML Format) to start the process')
+
+#OverviewLabel2 = Label(root, text=" \nPlease insert the ILR file below (XML Format) to start the process.")
+img = Image.open("RCULOGO_Smallpng.png")
 rculogo = ImageTk.PhotoImage(img)
 Label(root, image=rculogo).pack()
 
@@ -176,13 +189,15 @@ bottomFrame = Frame(root)
 bottomFrame.pack(side=BOTTOM)
 
 #Widgits (Buttons)
-Button1 = Button(bottomFrame,  text="    Being Anonymisation   ", fg="Black", bg="Yellow", command=OpenFile)
-Button1.pack(side=LEFT)
+Button1 = Button(bottomFrame,  text="              Select ILR             ", fg="Black", bg="Yellow", command=OpenFile, padx=1, pady=1)
+Button1.pack()
+Button1 = Button(bottomFrame,  text="Help and Extra Information", command=informationbox, padx=1, pady=1)
+Button1.pack()
 
+#Button1.place(x=175, y=315 )
 OverviewLabel3.pack()
+OverviewLabel4.pack()
 OverviewLabel.pack()
-OverviewLabel2.pack()
 
-
-#Start Event 
+#Start Event
 root.mainloop()
