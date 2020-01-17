@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="440dcb2b-9aa5-4a9c-9a0c-f005e84638b7" name="Default Changelist" comment="">
+    <list default="true" id="89621418-e513-4c8f-8ce8-5eba7a8e9084" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rcu tool TESTING BOOK.py" beforeDir="false" afterPath="$PROJECT_DIR$/Rcu tool TESTING BOOK.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Rcu tool using V4 -With GUI .py" beforeDir="false" afterPath="$PROJECT_DIR$/Rcu tool using V4 -With GUI .py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/xml and csv testing.py" beforeDir="false" afterPath="$PROJECT_DIR$/xml and csv testing.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,10 +14,10 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectId" id="1OSjOe0tEmhB7yJTOdnHUJPXm8H" />
+  <component name="ProjectId" id="1WW79FKnBUtYSZljUFU7AOY4gJp" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Rcu tool using V4 -With GUI .py" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -33,87 +31,16 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Anon Tool">
-    <configuration name="Anon Tool" type="PythonConfigurationType" factoryName="Python">
-      <module name="Anon Tool RCU" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="C:\Users\jkay\AppData\Local\Programs\Python\Python37-32\python.exe" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Rcu tool using V4 -With GUI .py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="Rcu tool TESTING BOOK" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Anon Tool RCU" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Rcu tool TESTING BOOK.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="xml and csv testing" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <module name="Anon Tool RCU" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/xml and csv testing.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.Rcu tool TESTING BOOK" />
-        <item itemvalue="Python.xml and csv testing" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="440dcb2b-9aa5-4a9c-9a0c-f005e84638b7" name="Default Changelist" comment="" />
-      <created>1563977860410</created>
+      <changelist id="89621418-e513-4c8f-8ce8-5eba7a8e9084" name="Default Changelist" comment="" />
+      <created>1579253344096</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1563977860410</updated>
+      <updated>1579253344096</updated>
     </task>
     <servers />
   </component>
@@ -122,9 +49,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
