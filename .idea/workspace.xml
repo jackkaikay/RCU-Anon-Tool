@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89621418-e513-4c8f-8ce8-5eba7a8e9084" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RCUTool.py" beforeDir="false" afterPath="$PROJECT_DIR$/RCUTool.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/RCUTool/Analysis-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/RCUTool/Analysis-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/RCUTool/EXE-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/RCUTool/EXE-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/RCUTool/PKG-00.pkg" beforeDir="false" afterPath="$PROJECT_DIR$/build/RCUTool/PKG-00.pkg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/RCUTool/PKG-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/RCUTool/PKG-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/RCUTool/PYZ-00.pyz" beforeDir="false" afterPath="$PROJECT_DIR$/build/RCUTool/PYZ-00.pyz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/RCUTool/PYZ-00.toc" beforeDir="false" afterPath="$PROJECT_DIR$/build/RCUTool/PYZ-00.toc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/RCUTool/base_library.zip" beforeDir="false" afterPath="$PROJECT_DIR$/build/RCUTool/base_library.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/RCUTool/warn-RCUTool.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/RCUTool/warn-RCUTool.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/RCUTool/xref-RCUTool.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/RCUTool/xref-RCUTool.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,7 +26,7 @@
   <component name="ProjectId" id="1WW79FKnBUtYSZljUFU7AOY4gJp" />
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Python Examples" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -30,6 +39,34 @@
         </RuleState>
       </list>
     </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="RCUTool" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Tool for freeze" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/RCUTool.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.RCUTool" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -49,7 +86,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

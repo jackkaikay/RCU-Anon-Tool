@@ -11,6 +11,7 @@ import sys
 from zipfile import ZipFile
 from os.path import basename
 
+#This function sorts images for pyinstaller (https://stackoverflow.com/questions/7674790/bundling-data-files-with-pyinstaller-onefile/44352931#44352931)
 def resource_path(relative_path):
     """ Get absolute path to resource, works for dev and for PyInstaller """
     try:
@@ -20,7 +21,6 @@ def resource_path(relative_path):
         base_path = os.path.abspath(".")
 
     return os.path.join(base_path, relative_path)
-
 depbandtxt = resource_path('Dependencies\DeprivationBand.txt')
 icoimg = resource_path('Dependencies\RCU2.ico')
 pngimg = resource_path("Dependencies\RCULOGO_Smallpng.png")
@@ -231,11 +231,12 @@ def informationbox():
     def leavemini():
         popup.destroy()
 
+
     popup.geometry ("310x525")
     popup.resizable(width=False, height=False)
     popup.title("Additional Information")
     popupbutton1 = tkinter.Button(popup, padx=5, pady=5, text="Ok", fg="Black", bg="Yellow", command = leavemini)
-    popup.iconbitmap(r'Dependencies\RCU2.ico')
+    popup.iconbitmap(icoimg)
     popuplabel1 = Label(popup, anchor='w', text=' Removes personally identifiable fields from the ILR files. \n \n \n Version 1.0 \n Copyright © RCU Ltd. \n \n Deletes following information where it exists \n \n  Postcodes\n Prior Postcodes \n  National Insurance Numbers \nULNs\nEmails\nTelephone Numbers\nAddress Line 1\nAddress Line 2\nAddress Line 3\nAddress Line 4\nFamily Names\nSurnames\n dates of birth\n \n \n How to use \n All anonymisation is done from the "Select ILR" button\n add \n much \n more \n text  \n \n For any further required assistance \n Tel: 01772 734855  |  Email: Mides@rcu.co.uk \n')
     popuplabel1.pack(fill='both')
     popupbutton1.pack()
