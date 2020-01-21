@@ -10,6 +10,7 @@ from PIL import Image, ImageTk
 import sys
 from zipfile import ZipFile
 from os.path import basename
+import threading
 
 #This function sorts images for pyinstaller (https://stackoverflow.com/questions/7674790/bundling-data-files-with-pyinstaller-onefile/44352931#44352931)
 def resource_path(relative_path):
@@ -26,7 +27,7 @@ icoimg = resource_path('Dependencies\RCU2.ico')
 pngimg = resource_path("Dependencies\RCULOGO_Smallpng.png")
 
 def OpenFile():
-
+    statusBar.config(text='STATUS: Loading ILR File...' , fg='red')
     filename = depbandtxt
     depDepend = pd.read_csv(filename)
     depDepend.set_index('Postcode', inplace=True)
@@ -35,18 +36,20 @@ def OpenFile():
                            title="Choose the ILR file.")
 
     nameFile = os.path.basename(name)
-
     if name == '':
         tkinter.messagebox.showinfo("Failed Anonymisation!",
                                     "Please Select a Valid ILR File")
+        statusBar.config(text='Status: Please Load ILR File', fg='Black')
     else:
+        statusBar.config(text='STATUS: Selecting Output Location...', fg='red')
         outputlocation = askdirectory(title="Select Output Location.")
 
     if outputlocation == '':
         tkinter.messagebox.showinfo("Failed Anonymisation!",
                                     "Please Select a Valid Output location")
+        statusBar.config(text='Status: Please Load ILR File', fg='Black')
     else:
-
+        statusBar.config(text='STATUS: Anonymising ILR File...', fg='red')
         UKPRN_Name = nameFile[4:12]
 
         try:
@@ -220,11 +223,11 @@ def OpenFile():
                                         "Finished Anonymisation! Thank you. \nFile explorer will automatically open in your selected output location.")
 
             os.startfile(outputlocation)
-
+            statusBar.config(text='Status: File Anonymised... Thank you for using the RCU Anonymiser tool', fg='Black')
         except:
             tkinter.messagebox.showinfo("Failed Anonymisation!",
                                         "Anonymisation Failed! Please retry or contact RCU \n  Tel: 01772 734855  |  Email: Mides@rcu.co.uk")
-
+            statusBar.config(text='Status: Please Load ILR File', fg='Black')
 def informationbox():
     popup = Tk()
 
@@ -241,6 +244,7 @@ def informationbox():
     popuplabel1.pack(fill='both')
     popupbutton1.pack()
     popup.mainloop()
+
 
 if __name__ == '__main__':
     root = Tk()
@@ -267,16 +271,17 @@ if __name__ == '__main__':
 
     # Widgits (Buttons)
     checkVar1 = IntVar()
-    Button1 = Button(bottomFrame, text="              Select ILR             ", fg="Black", bg="Yellow",
+    Button1 = Button(root, text="              Select ILR             ", fg="Black", bg="Yellow",
                      command=OpenFile, padx=1, pady=1)
-    Button1.pack()
-    Button1 = Button(bottomFrame, text="       Extra Information       ", command=informationbox, padx=1, pady=1)
-    Button1.pack()
-
+    Button2 = Button(root, text="       Extra Information       ", command=informationbox, padx=1, pady=1)
+    statusBar = Label(root, text="Status: Please Load ILR File", bd=1, relief=SUNKEN, anchor=W, fg='black')
+    statusBar.pack(side=BOTTOM, fill=X)
     # Button1.place(x=175, y=315 )
     OverviewLabel3.pack()
     OverviewLabel4.pack()
     OverviewLabel.pack()
+    Button1.pack()
+    Button2.pack()
 
     # Start Event
     root.mainloop()
