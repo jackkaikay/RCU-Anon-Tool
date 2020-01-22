@@ -12,8 +12,7 @@ from zipfile import ZipFile
 from os.path import basename
 import threading
 
-
-# This function sorts images for pyinstaller (https://stackoverflow.com/questions/7674790/bundling-data-files-with-pyinstaller-onefile/44352931#44352931)
+#This function sorts images for pyinstaller (https://stackoverflow.com/questions/7674790/bundling-data-files-with-pyinstaller-onefile/44352931#44352931)
 def resource_path(relative_path):
     """ Get absolute path to resource, works for dev and for PyInstaller """
     try:
@@ -23,15 +22,12 @@ def resource_path(relative_path):
         base_path = os.path.abspath(".")
 
     return os.path.join(base_path, relative_path)
-
-
 depbandtxt = resource_path('Dependencies\DeprivationBand.txt')
 icoimg = resource_path('Dependencies\RCU2.ico')
 pngimg = resource_path("Dependencies\RCULOGO_Smallpng.png")
 
-
 def OpenFile():
-    statusBar.config(text='STATUS: Loading ILR File...', fg='red')
+    statusBar.config(text='STATUS: Loading ILR File...' , fg='red')
     filename = depbandtxt
     depDepend = pd.read_csv(filename)
     depDepend.set_index('Postcode', inplace=True)
@@ -160,6 +156,7 @@ def OpenFile():
                     LRN_List[LRN_Num] = ns
                     LRN_Num += 1
 
+
                 PCD_List = {}
                 PCD_Num = 0
                 for ns in root.findall('{ESFA/ILR/2018-19}Learner'):
@@ -177,17 +174,14 @@ def OpenFile():
                     filewriter = csv.writer(csvfile, delimiter=',',
                                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
                     filewriter.writerow(
-                        ['UKPRN', 'Learner_Ref_Number', 'Deprivation_Band', 'Local_Authority_District',
-                         'Local_Authority_Ward'])
+                        ['UKPRN','Learner_Ref_Number', 'Deprivation_Band', 'Local_Authority_District', 'Local_Authority_Ward'])
 
                     Num = 0
 
+
                     for learners in PCD_List:
                         try:
-                            filewriter.writerow(
-                                [UKPRN_Name, LRN_List[Num], depDepend.loc[PCD_List[Num], 'Deprivation_Band'],
-                                 depDepend.loc[PCD_List[Num], 'LAD_Code'],
-                                 depDepend.loc[PCD_List[Num], 'Merged_Ward_Code']])
+                            filewriter.writerow([UKPRN_Name,LRN_List[Num], depDepend.loc[PCD_List[Num], 'Deprivation_Band'],depDepend.loc[PCD_List[Num], 'LAD_Code'],depDepend.loc[PCD_List[Num], 'Merged_Ward_Code']])
                             Num += 1
 
                         except:
@@ -195,7 +189,7 @@ def OpenFile():
                             assign = 'Null'
                             assignLad = 'Null'
                             assignWd = 'Null'
-                            filewriter.writerow([UKPRN_Name, LRN_List[Num], str(assign), str(assignLad), str(assignWd)])
+                            filewriter.writerow([UKPRN_Name,LRN_List[Num], str(assign), str(assignLad), str(assignWd)])
                             Num += 1
 
                 # Postcodes (Deleting last 3 digits)#
@@ -212,13 +206,14 @@ def OpenFile():
                 except:
                     print('No PostcodePrior Found')
 
+
             # Output And Save Modified FilePrior Postcodes
 
             statusBar.config(text='STATUS: Outputting Files to Selected Location...', fg='red')
             dom.write(outputlocation + '\RCU_' + nameFile + '.anon', encoding='utf-8', xml_declaration=True)
 
             zipObj = ZipFile(outputlocation + '\RCUFile.zip', 'w')
-            zipObj.write(outputlocation + '\RCU_' + nameFile + '.anon', basename('RCU_' + nameFile + '.anon'))
+            zipObj.write(outputlocation + '\RCU_' + nameFile + '.anon', basename('RCU_' + nameFile + '.anon') )
             zipObj.write(outputlocation + '\RCU_' + nameFile[:-4] + '.csv', 'RCU_' + nameFile[:-4] + '.csv')
             zipObj.close()
 
@@ -231,20 +226,19 @@ def OpenFile():
                                         "Anonymisation Failed! Please retry or contact RCU \n  Tel: 01772 734855  |  Email: Mides@rcu.co.uk")
             statusBar.config(text='Status: Please Load ILR File', fg='Black')
 
-
 def informationbox():
     popup = Tk()
 
     def leavemini():
         popup.destroy()
 
-    popup.geometry("310x525")
+
+    popup.geometry ("310x525")
     popup.resizable(width=False, height=False)
     popup.title("Additional Information")
-    popupbutton1 = tkinter.Button(popup, padx=5, pady=5, text="Ok", fg="Black", bg="Yellow", command=leavemini)
+    popupbutton1 = tkinter.Button(popup, padx=5, pady=5, text="Ok", fg="Black", bg="Yellow", command = leavemini)
     popup.iconbitmap(icoimg)
-    popuplabel1 = Label(popup, anchor='w',
-                        text=' Removes personally identifiable fields from the ILR files. \n \n \n Version 1.0 \n Copyright © RCU Ltd. \n \n Deletes following information where it exists \n \n  Postcodes\n Prior Postcodes \n  National Insurance Numbers \nULNs\nEmails\nTelephone Numbers\nAddress Line 1\nAddress Line 2\nAddress Line 3\nAddress Line 4\nFamily Names\nSurnames\n dates of birth\n \n \n How to use \n All anonymisation is done from the "Select ILR" button\n add \n much \n more \n text  \n \n For any further required assistance \n Tel: 01772 734855  |  Email: Mides@rcu.co.uk \n')
+    popuplabel1 = Label(popup, anchor='w', text=' Removes personally identifiable fields from the ILR files. \n \n \n Version 1.0 \n Copyright © RCU Ltd. \n \n Deletes following information where it exists \n \n  Postcodes\n Prior Postcodes \n  National Insurance Numbers \nULNs\nEmails\nTelephone Numbers\nAddress Line 1\nAddress Line 2\nAddress Line 3\nAddress Line 4\nFamily Names\nSurnames\n dates of birth\n \n \n How to use \n All anonymisation is done from the "Select ILR" button\n add \n much \n more \n text  \n \n For any further required assistance \n Tel: 01772 734855  |  Email: Mides@rcu.co.uk \n')
     popuplabel1.pack(fill='both')
     popupbutton1.pack()
     popup.mainloop()
@@ -256,17 +250,16 @@ def LoadingBox():
     def leavemini():
         popup.destroy()
 
-    popup.geometry("310x525")
+
+    popup.geometry ("310x525")
     popup.resizable(width=False, height=False)
     popup.title("Additional Information")
-    popupbutton1 = tkinter.Button(popup, padx=5, pady=5, text="Ok", fg="Black", bg="Yellow", command=leavemini)
+    popupbutton1 = tkinter.Button(popup, padx=5, pady=5, text="Ok", fg="Black", bg="Yellow", command = leavemini)
     popup.iconbitmap(icoimg)
-    popuplabel1 = Label(popup, anchor='w',
-                        text=' Removes personally identifiable fields from the ILR files. \n \n \n Version 1.0 \n Copyright © RCU Ltd. \n \n Deletes following information where it exists \n \n  Postcodes\n Prior Postcodes \n  National Insurance Numbers \nULNs\nEmails\nTelephone Numbers\nAddress Line 1\nAddress Line 2\nAddress Line 3\nAddress Line 4\nFamily Names\nSurnames\n dates of birth\n \n \n How to use \n All anonymisation is done from the "Select ILR" button\n add \n much \n more \n text  \n \n For any further required assistance \n Tel: 01772 734855  |  Email: Mides@rcu.co.uk \n')
+    popuplabel1 = Label(popup, anchor='w', text=' Removes personally identifiable fields from the ILR files. \n \n \n Version 1.0 \n Copyright © RCU Ltd. \n \n Deletes following information where it exists \n \n  Postcodes\n Prior Postcodes \n  National Insurance Numbers \nULNs\nEmails\nTelephone Numbers\nAddress Line 1\nAddress Line 2\nAddress Line 3\nAddress Line 4\nFamily Names\nSurnames\n dates of birth\n \n \n How to use \n All anonymisation is done from the "Select ILR" button\n add \n much \n more \n text  \n \n For any further required assistance \n Tel: 01772 734855  |  Email: Mides@rcu.co.uk \n')
     popuplabel1.pack(fill='both')
     popupbutton1.pack()
     popup.mainloop()
-
 
 if __name__ == '__main__':
     root = Tk()
