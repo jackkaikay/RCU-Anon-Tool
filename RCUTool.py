@@ -217,7 +217,7 @@ def OpenFile():
             statusBar.config(text='STATUS: Outputting Files to Selected Location...', fg='red')
             dom.write(outputlocation + '\RCU_' + nameFile + '.anon', encoding='utf-8', xml_declaration=True)
 
-            zipObj = ZipFile(outputlocation + '\RCUFile.zip', 'w')
+            zipObj = ZipFile(outputlocation + '\RCU_' + nameFile + '.zip', 'w')
             zipObj.write(outputlocation + '\RCU_' + nameFile + '.anon', basename('RCU_' + nameFile + '.anon'))
             zipObj.write(outputlocation + '\RCU_' + nameFile[:-4] + '.csv', 'RCU_' + nameFile[:-4] + '.csv')
             zipObj.close()
