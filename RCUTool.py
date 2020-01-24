@@ -11,7 +11,7 @@ import sys
 from zipfile import ZipFile
 from os.path import basename
 import threading
-
+import webbrowser
 
 # This function sorts images for pyinstaller (https://stackoverflow.com/questions/7674790/bundling-data-files-with-pyinstaller-onefile/44352931#44352931)
 def resource_path(relative_path):
@@ -30,7 +30,11 @@ icoimg = resource_path('Dependencies\RCU2.ico')
 pngimg = resource_path("Dependencies\RCULOGO_Smallpng.png")
 
 
+def openWebsite():
+    webbrowser.open_new(r'http://rcu.co.uk/')
+
 def OpenFile():
+    Button1.config(state='disabled', relief=SUNKEN, text='      ILR Anonymising..      ', bg='light yellow')
     statusBar.config(text='STATUS: Loading ILR File...', fg='red')
     filename = depbandtxt
     depDepend = pd.read_csv(filename)
@@ -226,59 +230,29 @@ def OpenFile():
                                         "Finished Anonymisation! Thank you. \nFile explorer will automatically open in your selected output location.")
             os.startfile(outputlocation)
             statusBar.config(text='Status: File Anonymised... Thank you for using the RCU Anonymiser tool', fg='Black')
+            Button1.pack_forget()
+            Button2.pack_forget()
+            OverviewLabel.pack_forget()
+            spaceSaver.pack_forget()
+            after1.pack()
+            spaceSaver.pack()
+            afterButton1.pack()
         except:
             tkinter.messagebox.showinfo("Failed Anonymisation!",
                                         "Anonymisation Failed! Please retry or contact RCU \n  Tel: 01772 734855  |  Email: Mides@rcu.co.uk")
             statusBar.config(text='Status: Please Load ILR File', fg='Black')
 
 
-def informationbox():
-    popup = Tk()
-
-    def leavemini():
-        popup.destroy()
-
-    popup.geometry("310x525")
-    popup.resizable(width=False, height=False)
-    popup.title("Additional Information")
-    popupbutton1 = tkinter.Button(popup, padx=5, pady=5, text="Ok", fg="Black", bg="Yellow", command=leavemini)
-    popup.iconbitmap(icoimg)
-    popuplabel1 = Label(popup, anchor='w',
-                        text=' Removes personally identifiable fields from the ILR files. \n \n \n Version 1.0 \n Copyright © RCU Ltd. \n \n Deletes following information where it exists \n \n  Postcodes\n Prior Postcodes \n  National Insurance Numbers \nULNs\nEmails\nTelephone Numbers\nAddress Line 1\nAddress Line 2\nAddress Line 3\nAddress Line 4\nFamily Names\nSurnames\n dates of birth\n \n \n How to use \n All anonymisation is done from the "Select ILR" button\n add \n much \n more \n text  \n \n For any further required assistance \n Tel: 01772 734855  |  Email: Mides@rcu.co.uk \n')
-    popuplabel1.pack(fill='both')
-    popupbutton1.pack()
-    popup.mainloop()
-
-
-def LoadingBox():
-    popup = Tk()
-
-    def leavemini():
-        popup.destroy()
-
-    popup.geometry("310x525")
-    popup.resizable(width=False, height=False)
-    popup.title("Additional Information")
-    popupbutton1 = tkinter.Button(popup, padx=5, pady=5, text="Ok", fg="Black", bg="Yellow", command=leavemini)
-    popup.iconbitmap(icoimg)
-    popuplabel1 = Label(popup, anchor='w',
-                        text=' Removes personally identifiable fields from the ILR files. \n \n \n Version 1.0 \n Copyright © RCU Ltd. \n \n Deletes following information where it exists \n \n  Postcodes\n Prior Postcodes \n  National Insurance Numbers \nULNs\nEmails\nTelephone Numbers\nAddress Line 1\nAddress Line 2\nAddress Line 3\nAddress Line 4\nFamily Names\nSurnames\n dates of birth\n \n \n How to use \n All anonymisation is done from the "Select ILR" button\n add \n much \n more \n text  \n \n For any further required assistance \n Tel: 01772 734855  |  Email: Mides@rcu.co.uk \n')
-    popuplabel1.pack(fill='both')
-    popupbutton1.pack()
-    popup.mainloop()
-
-
 if __name__ == '__main__':
     root = Tk()
     root.iconbitmap(icoimg)
-    root.title("RCU Anonymiser Tool")
+    root.title("RCU ILR Anonymiser")
     root.geometry("500x365")
-    OverviewLabel3 = Label(root, text='Anonymiser Tool', font='Helvetica 14 bold')
-    OverviewLabel4 = Label(root, text="Tel: 01772 734855  |  Email: Mides@rcu.co.uk", bd=1, )
+    OverviewLabel3 = Label(root, text='RCU ILR Anonymiser', font='Helvetica 14 bold')
+    spaceSaver = Label(root, text="", bd=1, )
     OverviewLabel = Label(root,
                           text='\n This programme will produce a zip file ready for upload (Anonymised ILR + Optional CSV) \n Please insert the ILR file below (XML Format) to start the process')
 
-    OverviewLabel2 = Label(root, text=" \nPlease insert the ILR file below (XML Format) to start the process.")
     img = Image.open(pngimg)
     rculogo = ImageTk.PhotoImage(img)
     Label(root, image=rculogo).pack()
@@ -294,18 +268,26 @@ if __name__ == '__main__':
     # Widgits (Buttons)
     checkVar1 = IntVar()
     Process = threading.Thread(target=OpenFile)
-    Button1 = Button(root, text="              Select ILR             ", fg="Black", bg="Yellow",
+    Button1 = Button(root, text="            Load ILR File           ", fg="Black", bg="Yellow",
                      command=Process.start, padx=1, pady=1)
-    Button2 = Button(root, text="       Extra Information       ", command=informationbox, padx=1, pady=1)
+    Button2 = Button(root, text="       Extra Information       ", command=openWebsite, padx=1, pady=1, bg='light yellow')
     statusBar = Label(root, text="Status: Please Load ILR File", bd=1, relief=SUNKEN, anchor=W, fg='black')
     statusBar.pack(side=BOTTOM, fill=X)
     spaceLabel = Label(root, text="")
     OverviewLabel3.pack()
-    OverviewLabel4.pack()
     OverviewLabel.pack()
     spaceLabel.pack()
     Button1.pack()
+    spaceSaver.pack()
     Button2.pack()
+
+
+    after1 = Label(root,
+                          text='\n Thank your for anonymising using the RCU ILR Anoymiser \n Please upload the ILR ZIP file to rcultd.co.uk \n alternatively press below to be taken directly to the upload area')
+    afterButton1 = Button(root, text="            Upload ILR           ", fg="Black", bg="Yellow",
+
+                     command=openWebsite, padx=1, pady=1)
+
 
     # Start Event
     root.mainloop()
