@@ -28,7 +28,8 @@ def resource_path(relative_path):
 depbandtxt = resource_path('Dependencies\DeprivationBand.txt')
 icoimg = resource_path('Dependencies\RCU2.ico')
 pngimg = resource_path("Dependencies\Banner.png")
-#pngimg = resource_path("Dependencies\RCULOGO_Smallpng.png")
+pngimg2 = resource_path("Dependencies\Banner2.png")
+
 
 
 def openWebsite():
@@ -246,11 +247,15 @@ def OpenFile():
                                         "Finished Anonymisation! Thank you. \nFile explorer will automatically open in your selected output location.")
             os.startfile(outputlocation)
             statusBar.config(text='Status: File Anonymised... Thank you for using the RCU Anonymiser tool', fg='Black')
+            img = ImageTk.PhotoImage(Image.open(pngimg2))
+            print('1')
+            mainimg.configure(image=img)
+            print('2')
+            mainimg.image = img
+            print('3')
             Button1.pack_forget()
             Button2.pack_forget()
-            OverviewLabel.pack_forget()
             spaceSaver.pack_forget()
-            after1.pack()
             spaceLabel.pack_forget()
             afterButton1.pack()
             spaceSaver.pack()
@@ -278,9 +283,12 @@ if __name__ == '__main__':
     root.title("RCU ILR Anonymiser")
     root.geometry("600x400")
     spaceSaver = Label(root, text="", bd=1, bg='black')
+
     img = Image.open(pngimg)
     rculogo = ImageTk.PhotoImage(img)
-    Label(root, image=rculogo).pack()
+    mainimg = Label(root, image=rculogo)
+
+    mainimg.pack()
 
     # Top Frame
     topFrame = Frame(root)
@@ -293,7 +301,7 @@ if __name__ == '__main__':
     # Widgits (Buttons)
     checkVar1 = IntVar()
     Process = threading.Thread(target=OpenFile)
-    Button1 = Button(root, text="            Load ILR File           ", fg="Black", bg="Yellow",
+    Button1 = Button(root, text="            Load ILR File           ", fg="Black", bg="yellow",
                      command=Process.start, padx=1, pady=1)
     Button2 = Button(root, text="       Extra Information       ", command=openWebsite, padx=1, pady=1, bg='light yellow')
     statusBar = Label(root, text="Status: Please Load ILR File", bd=1, relief=SUNKEN, anchor=W, fg='black')
@@ -302,13 +310,11 @@ if __name__ == '__main__':
     Button1.pack()
     spaceSaver.pack()
     Button2.pack()
-    after1 = Label(root,
-                          text='\n Thank your for anonymising using the RCU ILR Anoymiser \n press below to be taken directly to the upload area \n')
-    afterButton1 = Button(root, text="            Upload ILR           ", fg="Black", bg="Yellow",
+    afterButton1 = Button(root, text="            Close           ", fg="Black", bg="gold",
 
-                     command=openWebsite, padx=1, pady=1)
-    afterButton2 = Button(root, text="     Back to ILR Anonymisation     ", command=restart_program, padx=1, pady=1,
-                     bg='light yellow')
+                     command=closeProg, padx=1, pady=1)
+    afterButton2 = Button(root, text="          Restart           ", command=restart_program, padx=1, pady=1,
+                     bg='gold')
 
     # Start Event
     root.mainloop()
