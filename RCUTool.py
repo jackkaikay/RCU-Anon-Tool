@@ -27,7 +27,8 @@ def resource_path(relative_path):
 
 depbandtxt = resource_path('Dependencies\DeprivationBand.txt')
 icoimg = resource_path('Dependencies\RCU2.ico')
-pngimg = resource_path("Dependencies\RCULOGO_Smallpng.png")
+pngimg = resource_path("Dependencies\Banner.png")
+#pngimg = resource_path("Dependencies\RCULOGO_Smallpng.png")
 
 
 def openWebsite():
@@ -272,14 +273,11 @@ def restart_program():
 
 if __name__ == '__main__':
     root = Tk()
+    root.configure(background='black')
     root.iconbitmap(icoimg)
     root.title("RCU ILR Anonymiser")
-    root.geometry("500x365")
-    OverviewLabel3 = Label(root, text='RCU ILR Anonymiser', font='Helvetica 14 bold')
-    spaceSaver = Label(root, text="", bd=1, )
-    OverviewLabel = Label(root,
-                          text='\n This programme will produce a zip file ready for upload (Anonymised ILR + Optional CSV) \n Please insert the ILR file below (XML Format) to start the process')
-
+    root.geometry("600x400")
+    spaceSaver = Label(root, text="", bd=1, bg='black')
     img = Image.open(pngimg)
     rculogo = ImageTk.PhotoImage(img)
     Label(root, image=rculogo).pack()
@@ -301,9 +299,6 @@ if __name__ == '__main__':
     statusBar = Label(root, text="Status: Please Load ILR File", bd=1, relief=SUNKEN, anchor=W, fg='black')
     statusBar.pack(side=BOTTOM, fill=X)
     spaceLabel = Label(root, text="")
-    OverviewLabel3.pack()
-    OverviewLabel.pack()
-    spaceLabel.pack()
     Button1.pack()
     spaceSaver.pack()
     Button2.pack()
