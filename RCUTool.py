@@ -108,7 +108,7 @@ def OpenFile():
                     name.text = 'NULL'
                 except:
                     print('No AddLine1 Found')
-                    
+
             Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  5/11      ', bg='light yellow')
             for ns in root.findall('{ESFA/ILR/2018-19}Learner'):
                 name = ns.find('{ESFA/ILR/2018-19}AddLine2')
@@ -250,11 +250,8 @@ def OpenFile():
             os.startfile(outputlocation)
             statusBar.config(text='Status: File Anonymised... Thank you for using the RCU Anonymiser tool', fg='Black')
             img = ImageTk.PhotoImage(Image.open(pngimg2))
-            print('1')
-            mainimg.configure(image=img)
-            print('2')
+            mainimg.configure(image=img, borderwidth=0, highlightthickness=0)
             mainimg.image = img
-            print('3')
             Button1.pack_forget()
             Button2.pack_forget()
             spaceSaver.pack_forget()
@@ -288,7 +285,7 @@ if __name__ == '__main__':
 
     img = Image.open(pngimg)
     rculogo = ImageTk.PhotoImage(img)
-    mainimg = Label(root, image=rculogo)
+    mainimg = Label(root, image=rculogo, borderwidth=0, highlightthickness=0)
 
     mainimg.pack()
 
