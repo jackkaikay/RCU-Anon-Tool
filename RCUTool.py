@@ -51,6 +51,7 @@ def OpenFile():
         statusBar.config(text='Status: Please Load ILR File', fg='Black')
         tkinter.messagebox.showinfo("Failed Anonymisation!",
                                     "Please Select a Valid ILR File")
+        restart_program()
     else:
         statusBar.config(text='STATUS: Selecting Output location', fg='red')
         outputlocation = askdirectory(title="Select Output Location.")
@@ -59,6 +60,7 @@ def OpenFile():
         statusBar.config(text='Status: Please Select Valid Output Location', fg='Black')
         tkinter.messagebox.showinfo("Failed Anonymisation!",
                                     "Please Select a Valid Output location")
+        restart_program()
     else:
         UKPRN_Name = nameFile[4:12]
 
@@ -245,7 +247,17 @@ def OpenFile():
         except:
             tkinter.messagebox.showinfo("Failed Anonymisation!",
                                         "Anonymisation Failed! Please retry or contact RCU \n  Tel: 01772 734855  |  Email: Mides@rcu.co.uk")
+            Button1.status(text="            Load ILR File           ", fg="Black", bg="Yellow",
+                   command=Process.start, padx=1, pady=1)
             statusBar.config(text='Status: Please Load ILR File', fg='Black')
+
+
+def restart_program():
+    """Restarts the current program.
+    Note: this function does not return. Any cleanup action (like
+    saving data) must be done before calling this function."""
+    python = sys.executable
+    os.execl(python, python, * sys.argv)
 
 
 if __name__ == '__main__':
@@ -290,7 +302,7 @@ if __name__ == '__main__':
     afterButton1 = Button(root, text="            Upload ILR           ", fg="Black", bg="Yellow",
 
                      command=openWebsite, padx=1, pady=1)
-    afterButton2 = Button(root, text="     Close Programme     ", command=closeProg, padx=1, pady=1,
+    afterButton2 = Button(root, text="     Back to ILR Anonymisation     ", command=restart_program, padx=1, pady=1,
                      bg='light yellow')
 
     # Start Event
