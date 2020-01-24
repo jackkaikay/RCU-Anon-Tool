@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89621418-e513-4c8f-8ce8-5eba7a8e9084" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dependencies/Banner2.png" beforeDir="false" afterPath="$PROJECT_DIR$/Dependencies/Banner2.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/RCUTool.py" beforeDir="false" afterPath="$PROJECT_DIR$/RCUTool.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -146,7 +144,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/RCUTool.py</url>
-          <line>249</line>
+          <line>251</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
