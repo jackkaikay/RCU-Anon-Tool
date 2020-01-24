@@ -33,6 +33,9 @@ pngimg = resource_path("Dependencies\RCULOGO_Smallpng.png")
 def openWebsite():
     webbrowser.open_new(r'http://rcu.co.uk/')
 
+def closeProg():
+    root.destroy()
+
 def OpenFile():
     Button1.config(state='disabled', relief=SUNKEN, text='      ILR Anonymising..      ', bg='light yellow')
     statusBar.config(text='STATUS: Loading ILR File...', fg='red')
@@ -235,8 +238,10 @@ def OpenFile():
             OverviewLabel.pack_forget()
             spaceSaver.pack_forget()
             after1.pack()
-            spaceSaver.pack()
+            spaceLabel.pack_forget()
             afterButton1.pack()
+            spaceSaver.pack()
+            afterButton2.pack()
         except:
             tkinter.messagebox.showinfo("Failed Anonymisation!",
                                         "Anonymisation Failed! Please retry or contact RCU \n  Tel: 01772 734855  |  Email: Mides@rcu.co.uk")
@@ -280,14 +285,13 @@ if __name__ == '__main__':
     Button1.pack()
     spaceSaver.pack()
     Button2.pack()
-
-
     after1 = Label(root,
-                          text='\n Thank your for anonymising using the RCU ILR Anoymiser \n Please upload the ILR ZIP file to rcultd.co.uk \n alternatively press below to be taken directly to the upload area')
+                          text='\n Thank your for anonymising using the RCU ILR Anoymiser \n press below to be taken directly to the upload area \n')
     afterButton1 = Button(root, text="            Upload ILR           ", fg="Black", bg="Yellow",
 
                      command=openWebsite, padx=1, pady=1)
-
+    afterButton2 = Button(root, text="     Close Programme     ", command=closeProg, padx=1, pady=1,
+                     bg='light yellow')
 
     # Start Event
     root.mainloop()
