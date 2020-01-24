@@ -110,6 +110,7 @@ def OpenFile():
                     print('No AddLine1 Found')
 
             Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  5/11      ', bg='light yellow')
+            
             for ns in root.findall('{ESFA/ILR/2018-19}Learner'):
                 name = ns.find('{ESFA/ILR/2018-19}AddLine2')
                 try:
