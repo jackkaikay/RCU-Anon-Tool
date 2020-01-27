@@ -240,9 +240,9 @@ def OpenFile():
             # Output And Save Modified FilePrior Postcodes
 
             statusBar.config(text='STATUS: Outputting Files to Selected Location...', fg='red')
-            dom.write(outputlocation + '\RCU_' + nameFile + '.anon', encoding='utf-8', xml_declaration=True)
-            zipObj = ZipFile(outputlocation + '\RCU_' + nameFile + '.zip', 'w')
-            zipObj.write(outputlocation + '\RCU_' + nameFile + '.anon', basename('RCU_' + nameFile + '.anon'))
+            dom.write(outputlocation + '\RCU_' + nameFile[:-4] + '.anon', encoding='utf-8', xml_declaration=True)
+            zipObj = ZipFile(outputlocation + '\RCU_' + nameFile[:-4] + '.zip', 'w')
+            zipObj.write(outputlocation + '\RCU_' + nameFile + '.anon', basename('RCU_' + nameFile[:-4] + '.anon'))
             zipObj.write(outputlocation + '\RCU_' + nameFile[:-4] + '.csv', 'RCU_' + nameFile[:-4] + '.csv')
             zipObj.close()
 
