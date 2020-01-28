@@ -66,7 +66,7 @@ def OpenFile():
 
         try:
             statusBar.config(text='STATUS: Anonymising ILR File... Please Wait', fg='red')
-            ET.register_namespace("", 'ESFA/ILR/2018-19')
+            ET.register_namespace("", 'ESFA/ILR/2019-20')
             dom = ET.parse(name)
             root = dom.getroot()
             ####################
@@ -75,8 +75,8 @@ def OpenFile():
 
             # Date Of Birth#
             Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  1/11      ', bg='light yellow')
-            for ns in root.findall('{ESFA/ILR/2018-19}Learner'):
-                name = ns.find('{ESFA/ILR/2018-19}DateOfBirth')
+            for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
+                name = ns.find('{ESFA/ILR/2019-20}DateOfBirth')
                 try:
                     name.text = '2099-01-01'
                 except:
@@ -84,15 +84,15 @@ def OpenFile():
 
             # Full Name#
             Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  2/11      ', bg='light yellow')
-            for ns in root.findall('{ESFA/ILR/2018-19}Learner'):
-                name = ns.find('{ESFA/ILR/2018-19}FamilyName')
+            for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
+                name = ns.find('{ESFA/ILR/2019-20}FamilyName')
                 try:
                     name.text = 'NULL'
                 except:
                     print('No FamilyName Found')
             Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  3/11      ', bg='light yellow')
-            for ns in root.findall('{ESFA/ILR/2018-19}Learner'):
-                name = ns.find('{ESFA/ILR/2018-19}GivenNames')
+            for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
+                name = ns.find('{ESFA/ILR/2019-20}GivenNames')
                 try:
                     name.text = 'NULL'
                 except:
@@ -100,8 +100,8 @@ def OpenFile():
 
             # Adress Lines#
             Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  4/11      ', bg='light yellow')
-            for ns in root.findall('{ESFA/ILR/2018-19}Learner'):
-                name = ns.find('{ESFA/ILR/2018-19}AddLine1')
+            for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
+                name = ns.find('{ESFA/ILR/2019-20}AddLine1')
                 try:
                     name.text = 'NULL'
                 except:
@@ -109,23 +109,23 @@ def OpenFile():
 
             Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  5/11      ', bg='light yellow')
             
-            for ns in root.findall('{ESFA/ILR/2018-19}Learner'):
-                name = ns.find('{ESFA/ILR/2018-19}AddLine2')
+            for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
+                name = ns.find('{ESFA/ILR/2019-20}AddLine2')
                 try:
                     name.text = 'NULL'
                 except:
                     print('No AddLine2 Found')
 
             Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  6/11      ', bg='light yellow')
-            for ns in root.findall('{ESFA/ILR/2018-19}Learner'):
-                name = ns.find('{ESFA/ILR/2018-19}AddLine3')
+            for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
+                name = ns.find('{ESFA/ILR/2019-20}AddLine3')
                 try:
                     name.text = 'NULL'
                 except:
                     print('No AddLine3 Found')
             Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  7/11      ', bg='light yellow')
-            for ns in root.findall('{ESFA/ILR/2018-19}Learner'):
-                name = ns.find('{ESFA/ILR/2018-19}AddLine4')
+            for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
+                name = ns.find('{ESFA/ILR/2019-20}AddLine4')
                 try:
                     name.text = 'NULL'
                 except:
@@ -133,8 +133,8 @@ def OpenFile():
 
             # Telephone number#
             Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  8/11      ', bg='light yellow')
-            for ns in root.findall('{ESFA/ILR/2018-19}Learner'):
-                name = ns.find('{ESFA/ILR/2018-19}TelNo')
+            for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
+                name = ns.find('{ESFA/ILR/2019-20}TelNo')
                 try:
                     name.text = 'NULL'
                 except:
@@ -142,16 +142,16 @@ def OpenFile():
 
             # Email Address#
             Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  9/11      ', bg='light yellow')
-            for ns in root.findall('{ESFA/ILR/2018-19}Learner'):
-                name = ns.find('{ESFA/ILR/2018-19}Email')
+            for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
+                name = ns.find('{ESFA/ILR/2019-20}Email')
                 try:
                     name.text = 'NULL'
                 except:
                     print('No Email Found')
             # Unique Learner Numeber#
             Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  10/11      ', bg='light yellow')
-            for ns in root.findall('{ESFA/ILR/2018-19}Learner'):
-                name = ns.find('{ESFA/ILR/2018-19}ULN')
+            for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
+                name = ns.find('{ESFA/ILR/2019-20}ULN')
                 try:
                     name.text = '99999999'
                 except:
@@ -159,8 +159,8 @@ def OpenFile():
 
             # National Insurance Number#
             Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  11/11      ', bg='light yellow')
-            for ns in root.findall('{ESFA/ILR/2018-19}Learner'):
-                name = ns.find('{ESFA/ILR/2018-19}NINumber')
+            for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
+                name = ns.find('{ESFA/ILR/2019-20}NINumber')
                 try:
                     name.text = 'NULL'
                 except:
@@ -174,8 +174,8 @@ def OpenFile():
             if 0 == 0:
                 LRN_List = {}
                 LRN_Num = 0
-                for ns in root.findall('{ESFA/ILR/2018-19}Learner'):
-                    ns = ns.find('{ESFA/ILR/2018-19}LearnRefNumber')
+                for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
+                    ns = ns.find('{ESFA/ILR/2019-20}LearnRefNumber')
                     ns = ns.text
                     print(ns)
                     LRN_List[LRN_Num] = ns
@@ -184,8 +184,8 @@ def OpenFile():
 
                 PCD_List = {}
                 PCD_Num = 0
-                for ns in root.findall('{ESFA/ILR/2018-19}Learner'):
-                    ns = ns.find('{ESFA/ILR/2018-19}Postcode')
+                for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
+                    ns = ns.find('{ESFA/ILR/2019-20}Postcode')
                     ns = ns.text
                     print(ns)
                     PCD_List[PCD_Num] = ns
@@ -222,14 +222,14 @@ def OpenFile():
 
                 # Postcodes (Deleting last 3 digits)#
             Button1.config(state='disabled', relief=SUNKEN, text='      Saving Outputs     ', bg='light yellow')
-            for ns in root.findall('{ESFA/ILR/2018-19}Learner'):
-                name = ns.find('{ESFA/ILR/2018-19}Postcode')
+            for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
+                name = ns.find('{ESFA/ILR/2019-20}Postcode')
                 try:
                     name.text = name.text[:-4]
                 except:
                     print('No Postcode Found')
-            for ns in root.findall('{ESFA/ILR/2018-19}Learner'):
-                name = ns.find('{ESFA/ILR/2018-19}PostcodePrior')
+            for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
+                name = ns.find('{ESFA/ILR/2019-20}PostcodePrior')
                 try:
                     name.text = name.text[:-4]
                 except:
@@ -238,7 +238,8 @@ def OpenFile():
             # Output And Save Modified FilePrior Postcodes
 
             statusBar.config(text='STATUS: Outputting Files to Selected Location... Please Wait', fg='red')
-            dom.write(outputlocation + '\RCU_' + nameFile[:-4] + '.anon', encoding='utf-8', xml_declaration=True)
+            print(str(nameFile))
+            dom.write(outputlocation + '\RCU_' + nameFile + '.anon', encoding='utf-8', xml_declaration=True)
             zipObj = ZipFile(outputlocation + '\RCU_' + nameFile[:-4] + '.zip', 'w')
             zipObj.write(outputlocation + '\RCU_' + nameFile + '.anon', basename('RCU_' + nameFile + '.anon'))
             zipObj.write(outputlocation + '\RCU_' + nameFile[:-4] + '.csv', 'RCU_' + nameFile[:-4] + '.csv')
@@ -276,7 +277,7 @@ if __name__ == '__main__':
     root = Tk()
     root.configure(background='black')
     root.iconbitmap(icoimg)
-    root.title("RCU ILR Anonymiser")
+    root.title("RCU ILR Anonymiser 19/20")
     root.geometry("600x400")
     root.resizable(0, 0)
     spaceSaver = Label(root, text="", bd=1, bg='black')
