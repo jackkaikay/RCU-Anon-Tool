@@ -74,8 +74,8 @@ def OpenFile():
 
             # Date Of Birth#
             Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  1/11      ', bg='light yellow')
-            for ns in root.findall('{ESFA/ILR}Learner'):
-                name = ns.find('{ESFA/ILR}DateOfBirth')
+            for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
+                name = ns.find('{ESFA/ILR/2019-20}DateOfBirth')
                 try:
                     name.text = '2099-01-01'
                 except:
@@ -263,11 +263,7 @@ def OpenFile():
                                         "Tel: 01772 734855  |  Email: Mides@rcu.co.uk")
             restart_program()
 
-
 def restart_program():
-    """Restarts the current program.
-    Note: this function does not return. Any cleanup action (like
-    saving data) must be done before calling this function."""
     python = sys.executable
     os.execl(python, python, * sys.argv)
 
