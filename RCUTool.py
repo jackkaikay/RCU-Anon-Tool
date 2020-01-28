@@ -30,8 +30,6 @@ icoimg = resource_path('Dependencies\RCU2.ico')
 pngimg = resource_path("Dependencies\Banner.png")
 pngimg2 = resource_path("Dependencies\Banner2.png")
 
-
-
 def openWebsite():
     webbrowser.open_new(r'http://rcu.co.uk/')
 
@@ -67,7 +65,7 @@ def OpenFile():
         UKPRN_Name = nameFile[4:12]
 
         try:
-            statusBar.config(text='STATUS: Anonymising ILR File...', fg='red')
+            statusBar.config(text='STATUS: Anonymising ILR File... Please Wait', fg='red')
             ET.register_namespace("", 'ESFA/ILR/2018-19')
             dom = ET.parse(name)
             root = dom.getroot()
@@ -239,10 +237,10 @@ def OpenFile():
 
             # Output And Save Modified FilePrior Postcodes
 
-            statusBar.config(text='STATUS: Outputting Files to Selected Location...', fg='red')
+            statusBar.config(text='STATUS: Outputting Files to Selected Location... Please Wait', fg='red')
             dom.write(outputlocation + '\RCU_' + nameFile[:-4] + '.anon', encoding='utf-8', xml_declaration=True)
             zipObj = ZipFile(outputlocation + '\RCU_' + nameFile[:-4] + '.zip', 'w')
-            zipObj.write(outputlocation + '\RCU_' + nameFile + '.anon', basename('RCU_' + nameFile[:-4] + '.anon'))
+            zipObj.write(outputlocation + '\RCU_' + nameFile + '.anon', basename('RCU_' + nameFile + '.anon'))
             zipObj.write(outputlocation + '\RCU_' + nameFile[:-4] + '.csv', 'RCU_' + nameFile[:-4] + '.csv')
             zipObj.close()
 
@@ -262,10 +260,9 @@ def OpenFile():
             afterButton2.pack()
         except:
             tkinter.messagebox.showinfo("Failed Anonymisation!",
-                                        "Anonymisation Failed! Please retry or contact RCU \n  Tel: 01772 734855  |  Email: Mides@rcu.co.uk")
-            Button1.status(text="            Load ILR File           ", fg="Black", bg="Yellow",
-                   command=Process.start, padx=1, pady=1)
-            statusBar.config(text='Status: Please Load ILR File', fg='Black')
+                                        "Anonymisation Failed! Please retry or contact RCU \n "
+                                        "Tel: 01772 734855  |  Email: Mides@rcu.co.uk")
+            restart_program()
 
 
 def restart_program():
@@ -275,13 +272,13 @@ def restart_program():
     python = sys.executable
     os.execl(python, python, * sys.argv)
 
-
 if __name__ == '__main__':
     root = Tk()
     root.configure(background='black')
     root.iconbitmap(icoimg)
     root.title("RCU ILR Anonymiser")
     root.geometry("600x400")
+    root.resizable(0, 0)
     spaceSaver = Label(root, text="", bd=1, bg='black')
 
     img = Image.open(pngimg)
