@@ -24,14 +24,13 @@ def resource_path(relative_path):
 
     return os.path.join(base_path, relative_path)
 
-
 depbandtxt = resource_path('Dependencies\DeprivationBand.txt')
 icoimg = resource_path('Dependencies\RCU2.ico')
 pngimg = resource_path("Dependencies\Banner.png")
 pngimg2 = resource_path("Dependencies\Banner2.png")
 
 def openWebsite():
-    webbrowser.open_new(r'http://rcu.co.uk/')
+    webbrowser.open_new(r'https://www.rcu.co.uk/anonymiser/')
 
 def closeProg():
     root.destroy()
@@ -75,8 +74,8 @@ def OpenFile():
 
             # Date Of Birth#
             Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  1/11      ', bg='light yellow')
-            for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
-                name = ns.find('{ESFA/ILR/2019-20}DateOfBirth')
+            for ns in root.findall('{ESFA/ILR}Learner'):
+                name = ns.find('{ESFA/ILR}DateOfBirth')
                 try:
                     name.text = '2099-01-01'
                 except:
@@ -244,7 +243,6 @@ def OpenFile():
             zipObj.write(outputlocation + '\RCU_' + nameFile + '.anon', basename('RCU_' + nameFile + '.anon'))
             zipObj.write(outputlocation + '\RCU_' + nameFile[:-4] + '.csv', 'RCU_' + nameFile[:-4] + '.csv')
             zipObj.close()
-
             tkinter.messagebox.showinfo("Finished Anonymisation!",
                                         "Finished Anonymisation! Thank you. \nFile explorer will automatically open in your selected output location.")
             os.startfile(outputlocation)
@@ -280,13 +278,10 @@ if __name__ == '__main__':
     root.title("RCU ILR Anonymiser 19/20")
     root.geometry("600x400")
     root.resizable(0, 0)
-    spaceSaver = Label(root, text="", bd=1, bg='black')
 
     img = Image.open(pngimg)
     rculogo = ImageTk.PhotoImage(img)
     mainimg = Label(root, image=rculogo, borderwidth=0, highlightthickness=0)
-
-    mainimg.pack()
 
     # Top Frame
     topFrame = Frame(root)
@@ -297,22 +292,25 @@ if __name__ == '__main__':
     bottomFrame.pack(side=BOTTOM)
 
     # Widgits (Buttons)
-    checkVar1 = IntVar()
     Process = threading.Thread(target=OpenFile)
     Button1 = Button(root, text="            Load ILR File           ", fg="Black", bg="yellow",
                      command=Process.start, padx=1, pady=1)
-    Button2 = Button(root, text="       Extra Information       ", command=openWebsite, padx=1, pady=1, bg='light yellow')
+    Button2 = Button(root, text="       Extra Information       ", command=openWebsite, padx=1, pady=1)
     statusBar = Label(root, text="Status: Please Load ILR File", bd=1, relief=SUNKEN, anchor=W, fg='black')
-    statusBar.pack(side=BOTTOM, fill=X)
-    spaceLabel = Label(root, text="")
-    Button1.pack()
-    spaceSaver.pack()
-    Button2.pack()
+    spaceLabel = Label(root, text="",bg='black', fg='white')
+    spaceSaver = Label(root, text="", bd=1, bg='black', fg='white')
     afterButton1 = Button(root, text="            Close           ", fg="Black", bg="gold",
 
                      command=closeProg, padx=1, pady=1)
     afterButton2 = Button(root, text="          Restart           ", command=restart_program, padx=1, pady=1,
                      bg='gold')
+
+    #Packing Frames
+    mainimg.pack()
+    Button1.pack()
+    spaceSaver.pack()
+    Button2.pack()
+    statusBar.pack(side=BOTTOM, fill=X)
 
     # Start Event
     root.mainloop()
