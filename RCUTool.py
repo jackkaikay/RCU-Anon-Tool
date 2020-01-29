@@ -36,8 +36,8 @@ def closeProg():
     root.destroy()
 
 def OpenFile():
-    Button1.config(state='disabled', relief=SUNKEN, text='      ILR Anonymising..      ', bg='light yellow')
-    statusBar.config(text='STATUS: Loading ILR File...', fg='red')
+    Button1.config(state='disabled', relief=SUNKEN, text='      Selecting ILR File...      ', bg='light yellow')
+    statusBar.config(text='STATUS: Selecting ILR File...', fg='red')
     filename = depbandtxt
     depDepend = pd.read_csv(filename)
     depDepend.set_index('Postcode', inplace=True)
@@ -50,15 +50,6 @@ def OpenFile():
         statusBar.config(text='Status: Please Load ILR File', fg='Black')
         tkinter.messagebox.showinfo("Failed Anonymisation!",
                                     "Please Select a Valid ILR File")
-        restart_program()
-    else:
-        statusBar.config(text='STATUS: Selecting Output location', fg='red')
-        outputlocation = askdirectory(title="Select Output Location.")
-        statusBar.config(text='STATUS: Anonymising ILR File... Please Wait', fg='red')
-    if outputlocation == '':
-        statusBar.config(text='Status: Please Select Valid Output Location', fg='Black')
-        tkinter.messagebox.showinfo("Failed Anonymisation!",
-                                    "Please Select a Valid Output location")
         restart_program()
     else:
         UKPRN_Name = nameFile[4:12]
@@ -194,7 +185,7 @@ def OpenFile():
                 print(LRN_List)
                 print(PCD_List)
                 statusBar.config(text='STATUS: Creating Deprivation Band CSV Output...', fg='red')
-                with open(outputlocation + '\RCU_' + nameFile[:-4] + '.csv', 'w', newline='') as csvfile:
+                with open('RCU_' + nameFile[:-4] + '.csv', 'w', newline='') as csvfile:
                     filewriter = csv.writer(csvfile, delimiter=',',
                                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
                     filewriter.writerow(
@@ -238,20 +229,19 @@ def OpenFile():
 
             statusBar.config(text='STATUS: Outputting Files to Selected Location... Please Wait', fg='red')
             print(str(nameFile))
-            dom.write(outputlocation + '\RCU_' + nameFile + '.anon', encoding='utf-8', xml_declaration=True)
-            zipObj = ZipFile(outputlocation + '\RCU_' + nameFile[:-4] + '.zip', 'w')
-            zipObj.write(outputlocation + '\RCU_' + nameFile + '.anon', basename('RCU_' + nameFile + '.anon'))
-            zipObj.write(outputlocation + '\RCU_' + nameFile[:-4] + '.csv', 'RCU_' + nameFile[:-4] + '.csv')
+            dom.write('RCU_' + nameFile + '.anon', encoding='utf-8', xml_declaration=True)
+            zipObj = ZipFile('RCU_' + nameFile[:-4] + '.zip', 'w')
+            zipObj.write( 'RCU_' + nameFile + '.anon', basename('RCU_' + nameFile + '.anon'))
+            zipObj.write('RCU_' + nameFile[:-4] + '.csv', 'RCU_' + nameFile[:-4] + '.csv')
             zipObj.close()
             tkinter.messagebox.showinfo("Finished Anonymisation!",
                                         "Finished Anonymisation! Thank you. \nFile explorer will automatically open in your selected output location.")
-            os.startfile(outputlocation)
+            os.startfile()
             statusBar.config(text='Status: File Anonymised... Thank you for using the RCU Anonymiser tool', fg='Black')
             img = ImageTk.PhotoImage(Image.open(pngimg2))
             mainimg.configure(image=img, borderwidth=0, highlightthickness=0)
             mainimg.image = img
             Button1.pack_forget()
-            Button2.pack_forget()
             spaceSaver.pack_forget()
             spaceLabel.pack_forget()
             afterButton1.pack()
@@ -266,7 +256,6 @@ def OpenFile():
 def restart_program():
     python = sys.executable
     os.execl(python, python, * sys.argv)
-
 
 if __name__ == '__main__':
     root = Tk()
@@ -290,9 +279,8 @@ if __name__ == '__main__':
 
     # Widgits (Buttons)
     Process = threading.Thread(target=OpenFile)
-    Button1 = Button(root, text="            Load ILR File           ", fg="Black", bg="yellow",
+    Button1 = Button(root, text="           Select ILR File          ", fg="Black", bg="yellow",
                      command=Process.start, padx=1, pady=1)
-    Button2 = Button(root, text="       Extra Information       ", command=openWebsite, padx=1, pady=1)
     statusBar = Label(root, text="Status: Please Load ILR File", bd=1, relief=SUNKEN, anchor=W, fg='black')
     spaceLabel = Label(root, text="",bg='black', fg='white')
     spaceSaver = Label(root, text="", bd=1, bg='black', fg='white')
@@ -304,9 +292,8 @@ if __name__ == '__main__':
 
     #Packing Frames
     mainimg.pack()
-    Button1.pack()
     spaceSaver.pack()
-    Button2.pack()
+    Button1.pack()
     statusBar.pack(side=BOTTOM, fill=X)
 
     # Start Event
