@@ -44,7 +44,7 @@ def OpenFile():
 
     name = askopenfilename(filetypes=(("XML File", "*.XML"), ("All Files", "*.*")),
                            title="Choose the ILR file.")
-
+    print(name)
     nameFile = os.path.basename(name)
     if name == '':
         statusBar.config(text='Status: Please Load ILR File', fg='Black')
@@ -231,12 +231,15 @@ def OpenFile():
             print(str(nameFile))
             dom.write('RCU_' + nameFile + '.anon', encoding='utf-8', xml_declaration=True)
             zipObj = ZipFile('RCU_' + nameFile[:-4] + '.zip', 'w')
-            zipObj.write( 'RCU_' + nameFile + '.anon', basename('RCU_' + nameFile + '.anon'))
+            zipObj.write('RCU_' + nameFile + '.anon', basename('RCU_' + nameFile + '.anon'))
             zipObj.write('RCU_' + nameFile[:-4] + '.csv', 'RCU_' + nameFile[:-4] + '.csv')
+
             zipObj.close()
             tkinter.messagebox.showinfo("Finished Anonymisation!",
                                         "Finished Anonymisation! Thank you. \nFile explorer will automatically open in your selected output location.")
-            os.startfile()
+
+
+            #os.startfile()
             statusBar.config(text='Status: File Anonymised... Thank you for using the RCU Anonymiser tool', fg='Black')
             img = ImageTk.PhotoImage(Image.open(pngimg2))
             mainimg.configure(image=img, borderwidth=0, highlightthickness=0)
