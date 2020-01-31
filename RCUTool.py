@@ -45,20 +45,13 @@ def OpenFile():
     name = askopenfilename(filetypes=(("XML File", "*.XML"), ("All Files", "*.*")),
                            title="Choose the ILR file.")
 
+    filelocation = os.path.dirname(name)
+    print(filelocation)
     nameFile = os.path.basename(name)
     if name == '':
         statusBar.config(text='Status: Please Load ILR File', fg='Black')
         tkinter.messagebox.showinfo("Failed Anonymisation!",
                                     "Please Select a Valid ILR File")
-        restart_program()
-    else:
-        statusBar.config(text='STATUS: Selecting Output location', fg='red')
-        outputlocation = askdirectory(title="Select Output Location.")
-        statusBar.config(text='STATUS: Anonymising ILR File... Please Wait', fg='red')
-    if outputlocation == '':
-        statusBar.config(text='Status: Please Select Valid Output Location', fg='Black')
-        tkinter.messagebox.showinfo("Failed Anonymisation!",
-                                    "Please Select a Valid Output location")
         restart_program()
     else:
         UKPRN_Name = nameFile[4:12]
@@ -194,7 +187,7 @@ def OpenFile():
                 print(LRN_List)
                 print(PCD_List)
                 statusBar.config(text='STATUS: Creating Deprivation Band CSV Output...', fg='red')
-                with open(outputlocation + '\RCU_' + nameFile[:-4] + '.csv', 'w', newline='') as csvfile:
+                with open(filelocation + '\RCU_' + nameFile[:-4] + '.csv', 'w', newline='') as csvfile:
                     filewriter = csv.writer(csvfile, delimiter=',',
                                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
                     filewriter.writerow(
@@ -238,10 +231,10 @@ def OpenFile():
 
             statusBar.config(text='STATUS: Outputting Files to Selected Location... Please Wait', fg='red')
             print(str(nameFile))
-            dom.write(outputlocation + '\RCU_' + nameFile + '.anon', encoding='utf-8', xml_declaration=True)
-            zipObj = ZipFile(outputlocation + '\RCU_' + nameFile[:-4] + '.zip', 'w')
-            zipObj.write(outputlocation + '\RCU_' + nameFile + '.anon', basename('RCU_' + nameFile + '.anon'))
-            zipObj.write(outputlocation + '\RCU_' + nameFile[:-4] + '.csv', 'RCU_' + nameFile[:-4] + '.csv')
+            dom.write(filelocation + '\RCU_' + nameFile + '.anon', encoding='utf-8', xml_declaration=True)
+            zipObj = ZipFile(filelocation + '\RCU_' + nameFile[:-4] + '.zip', 'w')
+            zipObj.write(filelocation + '\RCU_' + nameFile + '.anon', basename('RCU_' + nameFile + '.anon'))
+            zipObj.write(filelocation + '\RCU_' + nameFile[:-4] + '.csv', 'RCU_' + nameFile[:-4] + '.csv')
             zipObj.close()
 
             tkinter.messagebox.showinfo("Finished Anonymisation!",
