@@ -54,7 +54,7 @@ def OpenFile():
                                     "Please Select a Valid ILR File")
         restart_program()
     else:
-        result = tkinter.messagebox.askquestion('Are You Sure?' , 'Anonymising: ' + nameFile + '\n \nOutput Location:  ' + filelocation + '\n \n Are You Sure?')
+        result = tkinter.messagebox.askquestion('Would you like to continue?', 'Anonymising: ' + nameFile + '\n \nOutput Location:  ' + filelocation + '\n \nWould you like to continue?')
         if result == 'yes':
 
 
@@ -255,6 +255,7 @@ def OpenFile():
                 Button1.pack_forget()
                 spaceSaver.pack_forget()
                 spaceLabel.pack_forget()
+                spaceSaver2.pack_forget()
                 afterButton1.pack()
                 spaceSaver.pack()
                 afterButton2.pack()
