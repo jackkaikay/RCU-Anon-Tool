@@ -269,12 +269,11 @@ def OpenFile():
                 for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
                     for xs in ns.findall('{ESFA/ILR/2019-20}LearningDelivery'):
                         name = xs.find('{ESFA/ILR/2019-20}LSDPostcode')
-                        print(name.text)
-
                         try:
                             name2 = name.text
                             sep = ' '
                             nameSplit = name2.split(sep, 1)[0]
+                            print(nameSplit)
                             name.text = nameSplit
                         except:
                             print('No Postcode Found')
