@@ -279,7 +279,6 @@ def OpenFile():
                             print('No Postcode Found')
 
                 # Output And Save Modified FilePrior Postcodes
-
                 statusBar.config(text='STATUS: Outputting Files to Selected Location... Please Wait', fg='red')
                 print(str(nameFile))
                 dom.write(filelocation + '\RCU_' + nameFile + '.anon', encoding='utf-8', xml_declaration=True)
@@ -287,10 +286,10 @@ def OpenFile():
                 zipObj.write(filelocation + '\RCU_' + nameFile + '.anon', basename('RCU_' + nameFile + '.anon'))
                 zipObj.write(filelocation + '\RCU_' + nameFile[:-4] + '.csv', 'RCU_' + nameFile[:-4] + '.csv')
                 zipObj.close()
-
                 tkinter.messagebox.showinfo("Finished Anonymisation!",
                                             "Finished Anonymisation! Thank you. \nFile explorer will automatically open in your selected output location.")
-
+                path = os.path.realpath(filelocation)
+                os.startfile(path)
 
                 #os.startfile()
                 statusBar.config(text='Status: File Anonymised... Thank you for using the RCU Anonymiser tool', fg='Black')
@@ -346,7 +345,6 @@ if __name__ == '__main__':
     spaceSaver2 = Label(root, text="", bd=1, bg='black', fg='white')
     websiteLabel = Label(root, text="Extra Information", fg="Yellow", bg='black', cursor="hand2")
     websiteLabel.bind("<Button-1>", lambda e: callback("https://www.rcu.co.uk/anonymiser/"))
-
     afterButton1 = Button(root, text="            Close           ", fg="Black", bg="gold",
                      command=closeProg, padx=1, pady=1)
     afterButton2 = Button(root, text="          Restart           ", command=restart_program, padx=1, pady=1,
