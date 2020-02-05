@@ -1,7 +1,6 @@
 import xml.etree.ElementTree as ET
 from tkinter import *
 from tkinter.filedialog import askopenfilename
-from tkinter.filedialog import askdirectory
 import tkinter.messagebox
 import os
 import pandas as pd
