@@ -67,28 +67,21 @@ def OpenFile():
                 ET.register_namespace("", 'ESFA/ILR/2019-20')
                 dom = ET.parse(name)
                 root = dom.getroot()
+
                 ####################
                 ##Anonymising data##
                 ####################
 
-                # Date Of Birth#
-                Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  1/14      ', bg='light yellow')
-                for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
-                    name = ns.find('{ESFA/ILR/2019-20}DateOfBirth')
-                    try:
-                        name.text = '2099-01-01'
-                    except:
-                        print('No DateOfBirth Found')
 
                 # Full Name#
-                Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  2/14      ', bg='light yellow')
+                Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  1/13      ', bg='light yellow')
                 for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
                     name = ns.find('{ESFA/ILR/2019-20}FamilyName')
                     try:
                         name.text = 'NULL'
                     except:
                         print('No FamilyName Found')
-                Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  3/14      ', bg='light yellow')
+                Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  2/13      ', bg='light yellow')
                 for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
                     name = ns.find('{ESFA/ILR/2019-20}GivenNames')
                     try:
@@ -97,7 +90,7 @@ def OpenFile():
                         print('No GivenNames Found')
 
                 # Adress Lines#
-                Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  4/14      ', bg='light yellow')
+                Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  3/13      ', bg='light yellow')
                 for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
                     name = ns.find('{ESFA/ILR/2019-20}AddLine1')
                     try:
@@ -105,7 +98,7 @@ def OpenFile():
                     except:
                         print('No AddLine1 Found')
 
-                Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  5/14      ', bg='light yellow')
+                Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  4/13      ', bg='light yellow')
 
                 for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
                     name = ns.find('{ESFA/ILR/2019-20}AddLine2')
@@ -114,14 +107,14 @@ def OpenFile():
                     except:
                         print('No AddLine2 Found')
 
-                Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  6/14      ', bg='light yellow')
+                Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  5/13      ', bg='light yellow')
                 for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
                     name = ns.find('{ESFA/ILR/2019-20}AddLine3')
                     try:
                         name.text = 'NULL'
                     except:
                         print('No AddLine3 Found')
-                Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  7/14      ', bg='light yellow')
+                Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  6/13      ', bg='light yellow')
                 for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
                     name = ns.find('{ESFA/ILR/2019-20}AddLine4')
                     try:
@@ -130,7 +123,7 @@ def OpenFile():
                         print('No AddLine4 Found')
 
                 # Telephone number#
-                Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  8/14      ', bg='light yellow')
+                Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  7/13      ', bg='light yellow')
                 for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
                     name = ns.find('{ESFA/ILR/2019-20}TelNo')
                     try:
@@ -139,7 +132,7 @@ def OpenFile():
                         print('No TelNo Found')
 
                 # Email Address#
-                Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  9/14      ', bg='light yellow')
+                Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  8/13      ', bg='light yellow')
                 for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
                     name = ns.find('{ESFA/ILR/2019-20}Email')
                     try:
@@ -147,7 +140,7 @@ def OpenFile():
                     except:
                         print('No Email Found')
                 # Unique Learner Numeber#
-                Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  10/14      ', bg='light yellow')
+                Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  9/13      ', bg='light yellow')
                 for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
                     name = ns.find('{ESFA/ILR/2019-20}ULN')
                     try:
@@ -156,7 +149,7 @@ def OpenFile():
                         print('No ULN Found')
 
                 # National Insurance Number#
-                Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  11/14      ', bg='light yellow')
+                Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  10/13      ', bg='light yellow')
                 for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
                     name = ns.find('{ESFA/ILR/2019-20}NINumber')
                     try:
@@ -164,7 +157,7 @@ def OpenFile():
                     except:
                         print('No NINumber Found')
 
-                Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  12/14      ', bg='light yellow')
+                Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  11/13      ', bg='light yellow')
                 for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
                     name = ns.find('{ESFA/ILR/2019-20}UCASPERID')
                     try:
@@ -172,7 +165,7 @@ def OpenFile():
                     except:
                         print('No UCASPERID Found ')
 
-                Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  13/14      ', bg='light yellow')
+                Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  12/13      ', bg='light yellow')
                 for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
                     name = ns.find('{ESFA/ILR/2019-20}UCASAPPID')
                     try:
@@ -180,7 +173,7 @@ def OpenFile():
                     except:
                         print('No UCASAPPID ID Fond')
 
-                Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  14/14      ', bg='light yellow')
+                Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  13/13      ', bg='light yellow')
                 for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
                     name = ns.find('{ESFA/ILR/2019-20}SSN')
                     try:
@@ -244,7 +237,7 @@ def OpenFile():
                                 Num += 1
 
                     # Postcodes (Deleting last 3 digits)#
-                Button1.config(state='disabled', relief=SUNKEN, text='      Saving Outputs     ', bg='light yellow')
+                Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  1/2     ', bg='light yellow')
                 for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
                     name = ns.find('{ESFA/ILR/2019-20}Postcode')
                     try:
@@ -255,6 +248,7 @@ def OpenFile():
                     except:
                         print('No Postcode Found')
 
+                Button1.config(state='disabled', relief=SUNKEN, text='     Anonymising  2/2...    ', bg='light yellow')
                 for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
                     name = ns.find('{ESFA/ILR/2019-20}PostcodePrior')
                     try:
@@ -265,6 +259,8 @@ def OpenFile():
                     except:
                         print('No Postcode Found')
 
+                Button1.config(state='disabled', relief=SUNKEN, text='     Outputting Files...     ', bg='light yellow')
+                statusBar.config(text='STATUS: Outputting Files to Selected Location... Please Wait', fg='red')
                 for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
                     for xs in ns.findall('{ESFA/ILR/2019-20}LearningDelivery'):
                         name = xs.find('{ESFA/ILR/2019-20}LSDPostcode')
@@ -278,7 +274,7 @@ def OpenFile():
                             print('No Postcode Found')
 
                 # Output And Save Modified FilePrior Postcodes
-                statusBar.config(text='STATUS: Outputting Files to Selected Location... Please Wait', fg='red')
+
                 print(str(nameFile))
                 dom.write(filelocation + '\RCU_' + nameFile + '.anon', encoding='utf-8', xml_declaration=True)
                 zipObj = ZipFile(filelocation + '\RCU_' + nameFile[:-4] + '.zip', 'w')
@@ -294,14 +290,7 @@ def OpenFile():
                 statusBar.config(text='Status: File Anonymised... Thank you for using the RCU Anonymiser tool', fg='Black')
                 img = ImageTk.PhotoImage(Image.open(pngimg2))
                 mainimg.configure(image=img, borderwidth=0, highlightthickness=0)
-                mainimg.image = img
-                Button1.pack_forget()
-                spaceSaver.pack_forget()
-                spaceLabel.pack_forget()
-                spaceSaver2.pack_forget()
-                afterButton1.pack()
-                spaceSaver.pack()
-                afterButton2.pack()
+                restart_program()
             except:
                 tkinter.messagebox.showinfo("Failed Anonymisation!",
                                             "Anonymisation Failed! Please retry or contact RCU \n "
@@ -330,7 +319,7 @@ if __name__ == '__main__':
     topFrame = Frame(root)
     topFrame.pack(side=TOP)
 
-    # Bottom Frame
+    # Bottom Framepyinst
     bottomFrame = Frame(root)
     bottomFrame.pack(side=BOTTOM)
 
@@ -342,7 +331,7 @@ if __name__ == '__main__':
     spaceLabel = Label(root, text="",bg='black', fg='white')
     spaceSaver = Label(root, text="", bd=1, bg='black', fg='white')
     spaceSaver2 = Label(root, text="", bd=1, bg='black', fg='white')
-    websiteLabel = Label(root, text="Extra Information", fg="Yellow", bg='black', cursor="hand2")
+    websiteLabel = Label(root, text="About ILR \n Anonymiser", fg="Yellow", bg='black', cursor="hand2")
     websiteLabel.bind("<Button-1>", lambda e: callback("https://www.rcu.co.uk/anonymiser/"))
     afterButton1 = Button(root, text="            Close           ", fg="Black", bg="gold",
                      command=closeProg, padx=1, pady=1)
@@ -354,7 +343,7 @@ if __name__ == '__main__':
     spaceSaver.pack()
     Button1.pack()
     spaceSaver2.pack()
-    websiteLabel.place(x=500,y=359)
+    websiteLabel.place(x=525,y=342.5)
     statusBar.pack(side=BOTTOM, fill=X)
 
 
