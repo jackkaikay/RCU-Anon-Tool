@@ -336,15 +336,17 @@ if __name__ == '__main__':
     spaceSaver = Label(root, text="", bd=1, bg='black', fg='white')
     spaceSaver2 = Label(root, text="", bd=1, bg='black', fg='white')
     websiteLabel = Label(root, text="About ILR \n Anonymiser", fg="Yellow", bg='black', cursor="hand2")
+    versionNumber = Label(root, text="V1.00",  fg="Yellow", bg='black', font=('', 8))
     websiteLabel.bind("<Button-1>", lambda e: callback("https://www.rcu.co.uk/anonymiser/"))
-    afterButton1 = Button(root, text="            Close           ", fg="Black", bg="gold",
+    afterButton1 = Button(root, text="            Close           ", fg="Black", bg="yellow",
                      command=closeProg, padx=1, pady=1)
     afterButton2 = Button(root, text="          Restart           ", command=restart_program, padx=1, pady=1,
-                     bg='gold')
+                     bg='yellow')
 
     #Packing Frames
     mainimg.pack()
     spaceSaver.pack()
+    versionNumber.place(x=0, y=360)
     Button1.pack()
     spaceSaver2.pack()
     websiteLabel.place(x=525,y=342.5)
