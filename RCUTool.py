@@ -77,7 +77,7 @@ def OpenFile():
                     ####################
                     if root.find('{ESFA/ILR/2019-20}Learner') == None:
                         tkinter.messagebox.showinfo("Failed Anonymisation!",
-                                                    "Incorrect ILR year detected.\nThis tool is compatible with the 2019/20 ILR only. \nFor any other year please contact RCU Ltd directly")
+                                                    "Incorrect ILR year detected.\nThis tool is compatible with the 2019/20 ILR only. \nFor any other year please contact RCU Ltd directly\n\nwww.rcu.co.uk/anonymiser")
                         restart_program()
                     else:
 
