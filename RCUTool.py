@@ -201,6 +201,7 @@ def OpenFile():
                         if 0 == 0:
                             LRN_List = {}
                             LRN_Num = 0
+
                             for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
                                 ns = ns.find('{ESFA/ILR/2019-20}LearnRefNumber')
                                 ns = ns.text
@@ -211,14 +212,18 @@ def OpenFile():
 
                             PCD_List = {}
                             PCD_Num = 0
-                            
+
                             for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
-                                ns = ns.find('{ESFA/ILR/2019-20}Postcode')
-                                ns = ns.text
-                                print(ns)
-                                PCD_List[PCD_Num] = ns
-                                PCD_List[PCD_Num] = ns
-                                PCD_Num += 1
+                                try:
+                                    ns = ns.find('{ESFA/ILR/2019-20}PostcodePrior')
+                                    ns = ns.text
+                                    print(ns)
+                                    PCD_List[PCD_Num] = ns
+                                    PCD_List[PCD_Num] = ns
+                                    PCD_Num += 1
+                                except:
+                                    print('Pri-Postcode not found')
+
                             Button1.config(state='disabled', relief=SUNKEN, text='   Deprivation Band Creation   ', bg='light yellow')
                             print(LRN_List)
                             print(PCD_List)
