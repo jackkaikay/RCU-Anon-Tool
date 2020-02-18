@@ -19,6 +19,7 @@ def resource_path(relative_path):
         # PyInstaller creates a temp folder and stores path in _MEIPASS
         base_path = sys._MEIPASS
     except Exception:
+
         base_path = os.path.abspath(".")
 
     return os.path.join(base_path, relative_path)
@@ -26,7 +27,6 @@ def resource_path(relative_path):
 depbandtxt = resource_path('Dependencies\DeprivationBand.txt')
 icoimg = resource_path('Dependencies\RCU2.ico')
 pngimg = resource_path("Dependencies\Banner.png")
-pngimg2 = resource_path("Dependencies\Banner2.png")
 
 def callback(url):
     webbrowser.open_new(url)
@@ -47,6 +47,7 @@ def OpenFile():
         tkinter.messagebox.showinfo("Failed Anonymisation!",
                                     "Please Select a Valid ILR File")
         restart_program()
+
     else:
         filelocation = os.path.dirname(name)
         print(filelocation)
@@ -55,6 +56,7 @@ def OpenFile():
             statusBar.config(text='Status: Please Load ILR File', fg='Black')
             tkinter.messagebox.showinfo("Failed Anonymisation!",
                                         "Please Select a Valid ILR File")
+
             restart_program()
 
         else:
@@ -209,6 +211,7 @@ def OpenFile():
 
                             PCD_List = {}
                             PCD_Num = 0
+                            
                             for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
                                 ns = ns.find('{ESFA/ILR/2019-20}Postcode')
                                 ns = ns.text
@@ -220,6 +223,8 @@ def OpenFile():
                             print(LRN_List)
                             print(PCD_List)
                             statusBar.config(text='STATUS: Creating Deprivation Band CSV Output...', fg='red')
+
+
                             with open(filelocation + '\RCU_' + nameFile[:-4] + '.csv', 'w', newline='') as csvfile:
                                 filewriter = csv.writer(csvfile, delimiter=',',
                                                         quotechar='|', quoting=csv.QUOTE_MINIMAL)
