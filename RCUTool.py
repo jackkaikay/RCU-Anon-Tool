@@ -170,19 +170,22 @@ def OpenFile():
 
                         Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  11/13      ', bg='light yellow')
                         for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
-                            name = ns.find('{ESFA/ILR/2019-20}UCASPERID')
-                            try:
-                                name.text = 'NULL'
-                            except:
-                                print('No UCASPERID Found ')
+                            for xs in ns.findall('{ESFA/ILR/2019-20}LearnerHE'):
+                                name = xs.find('{ESFA/ILR/2019-20}UCASPERID')
+                                try:
+                                    name.text = 'NULL'
+                                except:
+                                    print('No UCASPERID Found ')
 
                         Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  12/13      ', bg='light yellow')
                         for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
-                            name = ns.find('{ESFA/ILR/2019-20}UCASAPPID')
-                            try:
-                                name.text = 'NULL'
-                            except:
-                                print('No UCASAPPID ID Fond')
+                            for ns in ns.findall('{ESFA/ILR/2019-20}LearningDelivery'):
+                                for ls in ns.findall('{ESFA/ILR/2019-20}LearningDeliveryHE'):
+                                    name = ls.find('{ESFA/ILR/2019-20}UCASAPPID')
+                                    try:
+                                        name.text = 'NULL'
+                                    except:
+                                        print('No UCASAPPID ID Fond')
 
                         Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  13/13      ', bg='light yellow')
                         for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
