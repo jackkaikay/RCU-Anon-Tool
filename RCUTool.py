@@ -177,6 +177,7 @@ def OpenFile():
                                 except:
                                     print('No UCASPERID Found ')
 
+
                         Button1.config(state='disabled', relief=SUNKEN, text='      Anonymising  12/13      ', bg='light yellow')
                         for ns in root.findall('{ESFA/ILR/2019-20}Learner'):
                             for ns in ns.findall('{ESFA/ILR/2019-20}LearningDelivery'):
