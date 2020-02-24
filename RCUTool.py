@@ -24,7 +24,7 @@ def resource_path(relative_path):
 
     return os.path.join(base_path, relative_path)
 
-depbandtxt = resource_path('Dependencies\DeprivationBand.txt')
+depbandtxt = resource_path('Dependencies\DeprivationBand.csv')
 icoimg = resource_path('Dependencies\RCU2.ico')
 pngimg = resource_path("Dependencies\Banner.png")
 
@@ -39,8 +39,8 @@ def OpenFile():
     statusBar.config(text='STATUS: Selecting ILR File...', fg='red')
     filename = depbandtxt
     depDepend = pd.read_csv(filename)
-    depDepend.set_index('Postcode', inplace=True)
-
+    depDepend.set_index('Postcode', inplace=True,)
+    print(depDepend)
     name = askopenfilename(filetypes=(("XML File", "*.XML"), ("All Files", "*.*")),
                            title="Choose the ILR file.")
     if name == '':
@@ -249,7 +249,7 @@ def OpenFile():
                                              depDepend.loc[PCD_List[Num], 'LAD_Code'],
                                              depDepend.loc[PCD_List[Num], 'Merged_Ward_Code']])
                                         Num += 1
-
+                                        print('postcode FOUND')
                                     except:
                                         print('No Postcode Found')
                                         assign = 'Null'
