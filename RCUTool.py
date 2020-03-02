@@ -24,7 +24,7 @@ def resource_path(relative_path):
 
     return os.path.join(base_path, relative_path)
 
-depbandtxt = resource_path('Dependencies\DeprivationBand.csv')
+depbandtxt = resource_path('Dependencies\DeprivationBand.txt')
 icoimg = resource_path('Dependencies\RCU2.ico')
 pngimg = resource_path("Dependencies\Banner.png")
 
