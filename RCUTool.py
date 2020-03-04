@@ -245,7 +245,8 @@ def OpenFile():
                                 for learners in PCD_List:
                                     try:
                                         filewriter.writerow(
-                                            [UKPRN_Name, LRN_List[Num], depDepend.loc[PCD_List[Num], 'Deprivation_Band'],
+                                            [UKPRN_Name, LRN_List[Num],
+                                             depDepend.loc[PCD_List[Num], 'Deprivation_Band'],
                                              depDepend.loc[PCD_List[Num], 'LAD_Code'],
                                              depDepend.loc[PCD_List[Num], 'Merged_Ward_Code']])
                                         Num += 1
@@ -318,6 +319,8 @@ def OpenFile():
                         restart_program()
             else:
                 restart_program()
+
+
 
 def restart_program():
     python = sys.executable
