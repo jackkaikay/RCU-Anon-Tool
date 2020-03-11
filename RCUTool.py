@@ -60,7 +60,7 @@ def OpenFile():
             restart_program()
 
         else:
-            result = tkinter.messagebox.askquestion('Would you like to continue?', 'Anonymising: ' + nameFile + '\n \nOutput Location:  ' + filelocation + '\n \nWould you like to continue?')
+            result = tkinter.messagebox.askquestion('Would you like to continue?', 'Anonymising: ' + nameFile + '\n \nOutput Location:  ' + filelocation + '\n \nThis process may take up to five minutes.' +'\n \nWould you like to continue?')
             if result == 'yes':
 
 
