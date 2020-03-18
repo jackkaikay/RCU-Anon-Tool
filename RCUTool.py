@@ -173,7 +173,7 @@ def OpenFile():
                             for xs in ns.findall('{ESFA/ILR/2019-20}LearnerHE'):
                                 name = xs.find('{ESFA/ILR/2019-20}UCASPERID')
                                 try:
-                                    name.text = 'NULL'
+                                    name.text = '99999999'
                                 except:
                                     print('No UCASPERID Found ')
 
