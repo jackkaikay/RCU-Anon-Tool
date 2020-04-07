@@ -13,6 +13,7 @@ import threading
 import webbrowser
 
 # This function sorts images for pyinstaller (https://stackoverflow.com/questions/7674790/bundling-data-files-with-pyinstaller-onefile/44352931#44352931)
+#pyinstaller --icon="C:\Users\jkay\Desktop\RCU-Anon-Tool\favicon.ico" RCUTool.spec
 def resource_path(relative_path):
     """ Get absolute path to resource, works for dev and for PyInstaller """
     try:
@@ -25,8 +26,9 @@ def resource_path(relative_path):
     return os.path.join(base_path, relative_path)
 
 depbandtxt = resource_path('Dependencies\DeprivationBand.txt')
-icoimg = resource_path('Dependencies\RCU2.ico')
+icoimg = resource_path('Dependencies\\favicon.ico')
 pngimg = resource_path("Dependencies\Banner.png")
+
 
 def callback(url):
     webbrowser.open_new(url)
@@ -199,7 +201,7 @@ def OpenFile():
                         # Find and Add three tags for
                         # Deprivation Band
                         # Local Authority District
-                        # Local Authoirty Ward / ADD IF BOX TICKED
+                        # Local Authoirty Ward
 
                         if 0 == 0:
                             LRN_List = {}
@@ -309,9 +311,8 @@ def OpenFile():
                         path = os.path.realpath(filelocation)
                         os.startfile(path)
 
-                        #os.startfile()
+
                         statusBar.config(text='Status: File Anonymised... Thank you for using the RCU Anonymiser tool', fg='Black')
-                        restart_program()
                 except:
                         tkinter.messagebox.showinfo("Failed Anonymisation!",
                                                     "Anonymisation Failed! Please retry or contact RCU \n "
