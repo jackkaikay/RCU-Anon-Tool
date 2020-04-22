@@ -62,7 +62,7 @@ def OpenFile():
             restart_program()
 
         else:
-            result = tkinter.messagebox.askquestion('Would you like to continue?', 'Anonymising: ' + nameFile + '\n \nOutput Location:  ' + filelocation + '\n \nThis process may take up to five minutes.' +'\n \nWould you like to continue?')
+            result = tkinter.messagebox.askquestion('Would you like to continue?', 'Anonymising: ' + nameFile + '\n \nOutput Location:  ' + filelocation + '\n \nProcessing time may vary.' +'\n \nWould you like to continue?')
             if result == 'yes':
 
 
@@ -311,8 +311,8 @@ def OpenFile():
                         path = os.path.realpath(filelocation)
                         os.startfile(path)
 
-
                         statusBar.config(text='Status: File Anonymised... Thank you for using the RCU Anonymiser tool', fg='Black')
+                        restart_program()
                 except:
                         tkinter.messagebox.showinfo("Failed Anonymisation!",
                                                     "Anonymisation Failed! Please retry or contact RCU \n "
@@ -320,8 +320,6 @@ def OpenFile():
                         restart_program()
             else:
                 restart_program()
-
-
 
 def restart_program():
     python = sys.executable
@@ -331,7 +329,7 @@ if __name__ == '__main__':
     root = Tk()
     root.configure(background='black')
     root.iconbitmap(icoimg)
-    root.title("RCU ILR Anonymiser - V1.00 2019/20")
+    root.title("RCU ILR Anonymiser - V0.90 2019/20")
     root.geometry("600x400")
     root.resizable(0, 0)
 
@@ -356,7 +354,7 @@ if __name__ == '__main__':
     spaceSaver = Label(root, text="", bd=1, bg='black', fg='white')
     spaceSaver2 = Label(root, text="", bd=1, bg='black', fg='white')
     websiteLabel = Label(root, text="About ILR \n Anonymiser", fg="Yellow", bg='black', cursor="hand2")
-    versionNumber = Label(root, text="V1.00",  fg="Yellow", bg='black', font=('', 8))
+    versionNumber = Label(root, text="V0.90",  fg="Yellow", bg='black', font=('', 8))
     websiteLabel.bind("<Button-1>", lambda e: callback("https://www.rcu.co.uk/anonymiser/"))
     afterButton1 = Button(root, text="            Close           ", fg="Black", bg="yellow",
                      command=closeProg, padx=1, pady=1)
