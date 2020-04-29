@@ -13,6 +13,7 @@ import threading
 import webbrowser
 
 # This function sorts images for pyinstaller (https://stackoverflow.com/questions/7674790/bundling-data-files-with-pyinstaller-onefile/44352931#44352931)
+#pyinstaller --icon="C:\Users\jkay\Desktop\RCU-Anon-Tool\favicon.ico" RCUTool.spec
 def resource_path(relative_path):
     """ Get absolute path to resource, works for dev and for PyInstaller """
     try:
@@ -25,8 +26,9 @@ def resource_path(relative_path):
     return os.path.join(base_path, relative_path)
 
 depbandtxt = resource_path('Dependencies\DeprivationBand.txt')
-icoimg = resource_path('Dependencies\RCU2.ico')
+icoimg = resource_path('Dependencies\\favicon.ico')
 pngimg = resource_path("Dependencies\Banner.png")
+
 
 def callback(url):
     webbrowser.open_new(url)
@@ -39,8 +41,8 @@ def OpenFile():
     statusBar.config(text='STATUS: Selecting ILR File...', fg='red')
     filename = depbandtxt
     depDepend = pd.read_csv(filename)
-    depDepend.set_index('Postcode', inplace=True)
-
+    depDepend.set_index('Postcode', inplace=True,)
+    print(depDepend)
     name = askopenfilename(filetypes=(("XML File", "*.XML"), ("All Files", "*.*")),
                            title="Choose the ILR file.")
     if name == '':
@@ -60,7 +62,7 @@ def OpenFile():
             restart_program()
 
         else:
-            result = tkinter.messagebox.askquestion('Would you like to continue?', 'Anonymising: ' + nameFile + '\n \nOutput Location:  ' + filelocation + '\n \nWould you like to continue?')
+            result = tkinter.messagebox.askquestion('Would you like to continue?', 'Anonymising: ' + nameFile + '\n \nOutput Location:  ' + filelocation + '\n \nProcessing time may vary.' +'\n \nWould you like to continue?')
             if result == 'yes':
 
 
@@ -173,7 +175,7 @@ def OpenFile():
                             for xs in ns.findall('{ESFA/ILR/2019-20}LearnerHE'):
                                 name = xs.find('{ESFA/ILR/2019-20}UCASPERID')
                                 try:
-                                    name.text = 'NULL'
+                                    name.text = '99999999'
                                 except:
                                     print('No UCASPERID Found ')
 
@@ -200,7 +202,7 @@ def OpenFile():
                         # Find and Add three tags for
                         # Deprivation Band
                         # Local Authority District
-                        # Local Authoirty Ward / ADD IF BOX TICKED
+                        # Local Authoirty Ward
 
                         if 0 == 0:
                             LRN_List = {}
@@ -246,11 +248,12 @@ def OpenFile():
                                 for learners in PCD_List:
                                     try:
                                         filewriter.writerow(
-                                            [UKPRN_Name, LRN_List[Num], depDepend.loc[PCD_List[Num], 'Deprivation_Band'],
+                                            [UKPRN_Name, LRN_List[Num],
+                                             depDepend.loc[PCD_List[Num], 'Deprivation_Band'],
                                              depDepend.loc[PCD_List[Num], 'LAD_Code'],
                                              depDepend.loc[PCD_List[Num], 'Merged_Ward_Code']])
                                         Num += 1
-
+                                        print('postcode FOUND')
                                     except:
                                         print('No Postcode Found')
                                         assign = 'Null'
@@ -309,7 +312,6 @@ def OpenFile():
                         path = os.path.realpath(filelocation)
                         os.startfile(path)
 
-                        #os.startfile()
                         statusBar.config(text='Status: File Anonymised... Thank you for using the RCU Anonymiser tool', fg='Black')
                         restart_program()
                 except:
@@ -328,7 +330,7 @@ if __name__ == '__main__':
     root = Tk()
     root.configure(background='black')
     root.iconbitmap(icoimg)
-    root.title("RCU ILR Anonymiser - V1.00 2019/20")
+    root.title("RCU ILR Anonymiser - V0.90 2019/20")
     root.geometry("600x400")
     root.resizable(0, 0)
 
@@ -353,7 +355,7 @@ if __name__ == '__main__':
     spaceSaver = Label(root, text="", bd=1, bg='black', fg='white')
     spaceSaver2 = Label(root, text="", bd=1, bg='black', fg='white')
     websiteLabel = Label(root, text="About ILR \n Anonymiser", fg="Yellow", bg='black', cursor="hand2")
-    versionNumber = Label(root, text="V1.00",  fg="Yellow", bg='black', font=('', 8))
+    versionNumber = Label(root, text="V0.90",  fg="Yellow", bg='black', font=('', 8))
     websiteLabel.bind("<Button-1>", lambda e: callback("https://www.rcu.co.uk/anonymiser/"))
     afterButton1 = Button(root, text="            Close           ", fg="Black", bg="yellow",
                      command=closeProg, padx=1, pady=1)
