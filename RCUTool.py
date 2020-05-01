@@ -307,6 +307,10 @@ def OpenFile():
                         zipObj.write(filelocation + '\RCU_' + nameFile + '.anon', basename('RCU_' + nameFile + '.anon'))
                         zipObj.write(filelocation + '\RCU_' + nameFile[:-4] + '.csv', 'RCU_' + nameFile[:-4] + '.csv')
                         zipObj.close()
+                        os.remove(filelocation + '\RCU_' + nameFile + '.anon')
+                        os.remove(filelocation + '\RCU_' + nameFile[:-4] + '.csv')
+
+
                         tkinter.messagebox.showinfo("Finished Anonymisation!",
                                                     "Finished Anonymisation! Thank you. \nFile explorer will automatically open in your selected output location.")
                         path = os.path.realpath(filelocation)
