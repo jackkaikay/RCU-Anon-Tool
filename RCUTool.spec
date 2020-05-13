@@ -32,4 +32,4 @@ exe = EXE(pyz,
           upx=True,
           upx_exclude=[],
           runtime_tmpdir=None,
-          console=False, icon="C:\\Users\\jkay\\Desktop\\RCU-Anon-Tool\\favicon.ico")
+          console=False, icon="C:\\Users\\jkay\\Desktop\\RCU-Anon-Tool\\favicon2.ico")

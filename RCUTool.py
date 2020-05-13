@@ -13,7 +13,7 @@ import threading
 import webbrowser
 
 # This function sorts images for pyinstaller (https://stackoverflow.com/questions/7674790/bundling-data-files-with-pyinstaller-onefile/44352931#44352931)
-#pyinstaller --icon="C:\Users\jkay\Desktop\RCU-Anon-Tool\favicon.ico" RCUTool.spec
+#pyinstaller --icon="C:\Users\jkay\Desktop\RCU-Anon-Tool\favicon2.ico" RCUTool.spec
 def resource_path(relative_path):
     """ Get absolute path to resource, works for dev and for PyInstaller """
     try:
