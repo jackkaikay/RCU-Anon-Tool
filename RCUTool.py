@@ -303,7 +303,7 @@ def OpenFile():
 
                         print(str(nameFile))
                         dom.write(filelocation + '\RCU_' + nameFile + '.anon', encoding='utf-8', xml_declaration=True)
-                        zipObj = ZipFile(filelocation + '\RCU_' + nameFile[:-4] + '.zip', 'w')
+                        zipObj = ZipFile(filelocation + '\RCU_MIDES_UPLOAD_' + nameFile[:-4] + '.zip', 'w')
                         zipObj.write(filelocation + '\RCU_' + nameFile + '.anon', basename('RCU_' + nameFile + '.anon'))
                         zipObj.write(filelocation + '\RCU_' + nameFile[:-4] + '.csv', 'RCU_' + nameFile[:-4] + '.csv')
                         zipObj.close()
