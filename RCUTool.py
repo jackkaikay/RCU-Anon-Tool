@@ -47,7 +47,7 @@ def OpenFile():
                            title="Choose the ILR file.")
     if name == '':
         tkinter.messagebox.showinfo("Failed Anonymisation!",
-                                    "Please Select a Valid ILR File")
+                                    "Please Select a Valid ILR File \n \nRCU Anonymiser Will Now Automatically Restart")
         restart_program()
 
     else:
@@ -57,7 +57,8 @@ def OpenFile():
         if name == '':
             statusBar.config(text='Status: Please Load ILR File', fg='Black')
             tkinter.messagebox.showinfo("Failed Anonymisation!",
-                                        "Please Select a Valid ILR File")
+                                        "Please Select a Valid ILR File \n \nRCU Anonymiser Will Now Automatically Restart")
+
 
             restart_program()
 
@@ -81,7 +82,7 @@ def OpenFile():
                     ####################
                     if root.find('{ESFA/ILR/2019-20}Learner') == None:
                         tkinter.messagebox.showinfo("Failed Anonymisation!",
-                                                    "Incorrect ILR year detected.\nThis tool is compatible with the 2019/20 ILR only. \nFor any other year please contact RCU Ltd directly\n\nwww.rcu.co.uk/anonymiser")
+                                                    "Incorrect ILR year detected.\nThis tool is compatible with the 2019/20 ILR only. \nFor any other year please contact RCU Ltd directly\n\nwww.rcu.co.uk/anonymiser ")
                         restart_program()
                     else:
 
@@ -312,7 +313,7 @@ def OpenFile():
 
 
                         tkinter.messagebox.showinfo("Finished Anonymisation!",
-                                                    "Finished Anonymisation! Thank you. \nFile explorer will automatically open in your selected output location.")
+                                                    "Anonymisation Successful!\nThank You.\n\nPress 'OK' to be Redirected To The Relevant File Directory")
                         path = os.path.realpath(filelocation)
                         os.startfile(path)
 
@@ -320,10 +321,16 @@ def OpenFile():
                         restart_program()
                 except:
                         tkinter.messagebox.showinfo("Failed Anonymisation!",
-                                                    "Anonymisation Failed! Please retry or contact RCU \n "
+                                                    "Anonymisation Failed! Please Retry or Contact RCU\n\nThere Could Be a Problem With Your Selected ILR File\n\n"
                                                     "Tel: 01772 734855  |  Email: Mides@rcu.co.uk")
+
                         restart_program()
             else:
+
+                tkinter.messagebox.showinfo("Failed Anonymisation!",
+                                            "Anonymisation Failed! Please Retry or Contact RCU\n\nThere Could Be a Problem With Your Selected ILR File\n\n"
+                                            "Tel: 01772 734855  |  Email: Mides@rcu.co.uk")
+
                 restart_program()
 
 def restart_program():
