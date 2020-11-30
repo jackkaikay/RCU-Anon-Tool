@@ -341,7 +341,7 @@ if __name__ == '__main__':
     root = Tk()
     root.configure(background='black')
     root.iconbitmap(icoimg)
-    root.title("RCU ILR Anonymiser - V0.90 2019/20")
+    root.title("RCU ILR Anonymiser - V1.0 2020/21")
     root.geometry("600x400")
     root.resizable(0, 0)
 
@@ -366,7 +366,7 @@ if __name__ == '__main__':
     spaceSaver = Label(root, text="", bd=1, bg='black', fg='white')
     spaceSaver2 = Label(root, text="", bd=1, bg='black', fg='white')
     websiteLabel = Label(root, text="About ILR \n Anonymiser", fg="Yellow", bg='black', cursor="hand2")
-    versionNumber = Label(root, text="V0.90",  fg="Yellow", bg='black', font=('', 8))
+    versionNumber = Label(root, text="V1.00",  fg="Yellow", bg='black', font=('', 8))
     websiteLabel.bind("<Button-1>", lambda e: callback("https://www.rcu.co.uk/anonymiser/"))
     afterButton1 = Button(root, text="            Close           ", fg="Black", bg="yellow",
                      command=closeProg, padx=1, pady=1)
